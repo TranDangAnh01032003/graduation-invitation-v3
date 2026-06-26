@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phạm Như Quỳnh</title>
+  <meta name="description" content="Thư mời dự lễ tốt nghiệp của Phạm Như Quỳnh" />
+  <link rel="icon" href="assets/ueb-logo-transparent.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .topbar {
+      justify-content: flex-start;
+      gap: 10px;
+      padding-right: 11px;
+      padding-left: 10px;
+    }
+
+    .topbar .home-cap {
+      order: 1;
+      width: 36px;
+      height: 34px;
+      flex: 0 0 36px;
+      margin-right: 0;
+      justify-content: center;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .topbar .home-logo {
+      width: 28px;
+      height: 28px;
+    }
+
+    .toolbar-title {
+      order: 2;
+      width: auto;
+      max-width: 132px;
+      margin-right: auto;
+      margin-left: 0;
+      flex: 1 1 auto;
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: opacity .24s ease, transform .24s ease, color .24s ease;
+    }
+
+    .topbar.toolbar-solid .toolbar-title {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+
+    .topbar.toolbar-title-visible .toolbar-title {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .topbar .theme-btn {
+      order: 3;
+      margin: 0 4px 0 -4px;
+      width: 46px;
+      height: 26px;
+      min-height: 26px;
+      flex: 0 0 46px;
+    }
+
+    .topbar .floating-music-btn {
+      order: 4;
+      margin: 0;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+    }
+
+    .topbar .menu-btn {
+      order: 5;
+      margin: 0;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+    }
+
+    .topbar.toolbar-solid .home-cap {
+      border: 0;
+      background: transparent;
+    }
+
+    body.dark-mode .topbar .home-cap {
+      border: 0;
+      background: transparent;
+    }
+
+    @media(max-width:390px) {
+      .topbar {
+        gap: 9px;
+        padding-right: 9px;
+        padding-left: 9px;
+      }
+
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Great+Vibes&family=Oswald:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="index">
+  <audio id="bgMusic" loop preload="none"><source src="assets/music.mp3" type="audio/mpeg"></audio>
+  <header class="topbar">
+    <a href="#home" class="home-cap" aria-label="Về đầu trang"><img src="assets/ueb-logo-transparent.png" alt="UEB" class="home-logo"></a>
+    <span class="toolbar-title">Phạm Như Quỳnh</span>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Chuyển chế độ sáng tối"><span class="theme-knob"></span></button>
+    <button class="floating-music-btn" id="musicBtn" type="button" aria-label="Bật hoặc tắt nhạc">♫</button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Mở menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="side-menu" id="sideMenu" aria-label="Menu điều hướng">
+    <div class="side-menu-head"><span>Graduation Menu</span><button type="button" id="closeMenuBtn" aria-label="Đóng menu">×</button></div>
+    <a href="#home" data-menu-link>Trang chủ</a>
+    <a href="#date" data-menu-link>Thời gian - Địa điểm</a>
+    <a href="#guestbook" data-menu-link>Sổ lưu bút</a>
+    <a href="#countdown" data-menu-link>Đếm ngược</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <main class="mobile-page">
+    <section class="hero-section" id="home">
+      <img src="assets/photo1.jpg" alt="Ảnh tốt nghiệp của Phạm Như Quỳnh" class="hero-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <img src="assets/graduation-ceremony-text-crop.png" alt="Graduation Ceremony" class="hero-ceremony-img">
+        <p class="date-text">02 . 08 . 2026</p>
+      </div>
+    </section>
+    <section class="hero-name-section" aria-label="Tên nhân vật chính">
+      <h1 class="signature hero-name">Phạm Như Quỳnh</h1>
+    </section>
+
+    <section class="section intro-section">
+      <p class="quote" id="invitationQuote" data-config-text="quote">“Hi vọng trong bức tranh thanh xuân của tớ sẽ có sự góp mặt của cậu.”</p>
+    </section>
+
+    <section class="section event-info-section" id="date">
+      <div class="event-time-layout" aria-label="Thời gian lễ tốt nghiệp">
+        <div class="event-side event-weekday">
+          <span></span>
+          <strong>Chủ nhật</strong>
+        </div>
+        <div class="event-date-core">
+          <span>August</span>
+          <strong>02</strong>
+          <em>2026</em>
+        </div>
+        <div class="event-side event-hour">
+          <span></span>
+          <strong>10:00 - 12:00</strong>
+        </div>
+      </div>
+      <div class="event-location-block" id="location">
+        <p class="event-location-label">Location</p>
+        <p class="event-school" data-config-text="school">Trường Đại học Kinh tế - Đại học Quốc gia Hà Nội</p>
+        <h2 data-config-text="hall">Hội trường MMH</h2>
+        <p class="event-address" data-config-text="address">Số 57 Phạm Hùng, Nam Từ Liêm, Hà Nội</p>
+        <a class="outline-btn event-map-btn" href="https://www.google.com/maps/search/?api=1&query=Số+57+Phạm+Hùng+Nam+Từ+Liêm+Hà+Nội" target="_blank" rel="noopener noreferrer">Chỉ đường</a>
+      </div>
+    </section>
+
+    <section class="section guestbook-section" id="guestbook">
+      <div class="guestbook-hero"><img src="assets/photo11.jpg" alt="Sổ lưu bút"><div class="dark-card"><p class="script-white">Sổ lưu bút</p></div></div>
+      <form class="guest-form" id="guestForm">
+        <input type="text" id="guestName" placeholder="Tên của bạn" required>
+        <textarea id="guestMessage" rows="5" placeholder="Gửi lời nhắn đến Quỳnh" required></textarea>
+        <select id="guestAttend"><option value="Sẽ đến">Mình sẽ đến</option><option value="Chưa chắc">Mình chưa chắc</option><option value="Không đến được">Mình không đến được</option></select>
+        <button type="submit" class="submit-btn">Gửi lời nhắn & xác nhận</button>
+      </form>
+      <p class="thanks-text" id="formThanks" data-config-text="formThanks">Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến buổi lễ tốt nghiệp của mình.</p>
+    </section>
+
+    <section class="section countdown-section" id="countdown">
+      <div class="line-title time-title"><span></span><h2>Time</h2><span></span></div>
+      <div class="time-box"><span id="days">00</span><b>:</b><span id="hours">00</span><b>:</b><span id="minutes">00</span><b>:</b><span id="seconds">00</span></div>
+    </section>
+
+    <section class="thank-section"><img src="assets/photo12.jpg" alt="Thank you"><div class="thank-overlay"><h2>Thank you!</h2></div></section>
+    <div class="bottom-space"></div>
+  </main>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

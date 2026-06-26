@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Sổ lưu bút</title>
+  <link rel="icon" href="assets/ueb-logo-transparent.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body" data-page="admin">
+  <main class="admin-page">
+    <section class="admin-login" id="loginBox">
+      <div class="admin-login-brand">
+        <img src="assets/ueb-logo-transparent.png" alt="UEB">
+        <span>Graduation Ceremony</span>
+      </div>
+      <p class="small-title">Góc riêng</p>
+      <h1>Góc của Quỳnh</h1>
+      <p class="admin-login-lead">Nơi Quỳnh xem lời chúc, danh sách phản hồi và mở món quà tốt nghiệp.</p>
+      <div class="admin-login-form">
+        <label for="adminUser">Tên đăng nhập</label>
+        <input type="text" id="adminUser" placeholder="Nhập tên của bạn" autocomplete="username">
+        <label for="adminPass">Mật khẩu</label>
+        <input type="password" id="adminPass" placeholder="Nhập mật khẩu" autocomplete="current-password">
+        <button class="submit-btn full-btn admin-login-btn" onclick="fakeLogin()">Vào góc của Quỳnh</button>
+      </div>
+      <p class="login-hint">Bản local demo: nhập thông tin bất kỳ để xem thử trang quản lý.</p>
+      <a href="index.html" class="admin-back-link">Quay lại thiệp mời</a>
+    </section>
+    <section class="dashboard hidden" id="dashboardBox">
+      <div class="admin-top">
+        <div><p class="small-title">Xin chào</p><h1>Quỳnh</h1></div>
+        <div class="admin-top-actions"><a href="index.html" class="outline-btn">Mở web lời mời</a><button class="outline-btn" type="button" onclick="fakeLogout()">Đăng xuất</button></div>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card"><strong id="statTotal">0</strong><span>Lời chúc</span></div>
+        <div class="stat-card"><strong id="statYes">0</strong><span>Sẽ đến</span></div>
+        <div class="stat-card"><strong id="statMaybe">0</strong><span>Chưa chắc</span></div>
+        <div class="stat-card"><strong id="statNo">0</strong><span>Không đến</span></div>
+      </div>
+      <div class="admin-actions"><a href="gift.html?from=admin" class="submit-btn">Mở món quà của bạn</a><button type="button" class="outline-btn" onclick="clearGuestbook()">Xóa dữ liệu demo</button></div>
+      <section class="guest-list"><h2>Sổ lưu bút</h2><div id="guestList"></div></section>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
