@@ -22,7 +22,7 @@ Current public display:
 - Month display: August
 - Year: 2026
 - Current event time displayed in `index.html`: 10:00 - 12:00
-- Countdown date in `script.js`: `2026-08-02T07:30:00+07:00`
+- Countdown date in `script.js`: `2026-08-02T10:00:00+07:00`
 
 Location:
 - Trường Đại học Kinh tế - Đại học Quốc gia Hà Nội

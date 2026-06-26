@@ -48,8 +48,8 @@ Goal:
 - Finish and stabilize the current static version before adding real backend/auth.
 
 Tasks:
-- [ ] Confirm event time: visible page currently says `10:00 - 12:00`, countdown uses `07:30`.
-- [ ] Decide final event time and update all places consistently.
+- [x] Confirm event time: visible page and countdown use `10:00 - 12:00` / `2026-08-02T10:00:00+07:00`.
+- [x] Decide final event time and update all places consistently.
 - [ ] Test current page on mobile phone.
 - [ ] Check topbar spacing at 360px/390px.
 - [ ] Check hero photo crop.

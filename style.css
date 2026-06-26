@@ -4828,3 +4828,2011 @@ body.dark-mode .hero-name-section .signature.hero-name {
     font-size: 48px;
   }
 }
+
+/* Admin login v2 */
+.admin-body {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(255, 255, 255, .72), rgba(248, 246, 242, .86)),
+    url("assets/bg-silk.png") center top / cover repeat-y;
+  color: #2b2d31;
+}
+
+.admin-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px 18px;
+}
+
+.admin-login-v2 {
+  position: relative;
+  width: min(392px, 100%);
+  margin: 0 auto;
+  padding: 24px 22px 22px;
+  overflow: hidden;
+  border: 1px solid rgba(43, 45, 49, .12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: 0 24px 70px rgba(31, 33, 38, .14);
+  text-align: left;
+  backdrop-filter: blur(12px);
+}
+
+.admin-login-v2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 8%, rgba(255, 255, 255, .72), transparent 30%),
+    linear-gradient(135deg, rgba(132, 43, 48, .08), transparent 32%, rgba(31, 33, 38, .04));
+}
+
+.admin-login-v2 > * {
+  position: relative;
+  z-index: 1;
+}
+
+.admin-login-v2 .admin-login-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 26px;
+  color: #30343a;
+  font-family: "Oswald", "Roboto Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.admin-login-v2 .admin-login-brand img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.admin-login-heading {
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(43, 45, 49, .1);
+  text-align: center;
+}
+
+.admin-login-v2 .small-title {
+  margin: 0 0 4px;
+  color: #8a3b3d;
+  font-family: "Oswald", "Roboto Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.admin-login-v2 h1 {
+  margin: 0;
+  color: #262a30;
+  font-family: "Allura", "Great Vibes", cursive;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: .95;
+}
+
+.admin-login-heading p:not(.small-title) {
+  max-width: 300px;
+  margin: 12px auto 0;
+  color: #5b6068;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.admin-login-v2 .admin-login-form {
+  display: grid;
+  gap: 8px;
+  padding-top: 22px;
+}
+
+.admin-login-v2 .admin-login-form label {
+  color: #32363d;
+  font-family: "Oswald", "Roboto Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.admin-login-v2 input {
+  width: 100%;
+  min-height: 44px;
+  margin: 0 0 8px;
+  padding: 12px 16px;
+  border: 1px solid rgba(43, 45, 49, .22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .74);
+  color: #24282e;
+  font-size: 13px;
+}
+
+.admin-login-v2 input::placeholder {
+  color: #848890;
+}
+
+.admin-login-v2 input:focus {
+  border-color: rgba(138, 59, 61, .62);
+  box-shadow: 0 0 0 4px rgba(138, 59, 61, .1);
+}
+
+.admin-login-v2 .admin-login-btn {
+  min-height: 44px;
+  margin-top: 4px;
+  border: 0;
+  border-radius: 999px;
+  background: #22252b;
+  color: #fff;
+  font-family: "Oswald", "Roboto Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  box-shadow: 0 14px 28px rgba(34, 37, 43, .18);
+}
+
+.admin-login-v2 .admin-login-btn:hover {
+  background: #17191e;
+}
+
+.admin-login-footer {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.admin-login-v2 .login-hint {
+  margin: 0;
+  color: #747982;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.admin-login-v2 .admin-back-link {
+  display: inline-flex;
+  margin-top: 14px;
+  color: #30343a;
+  font-family: "Oswald", "Roboto Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media(max-width:520px) {
+  .admin-page {
+    padding: 18px;
+  }
+
+  .admin-login-v2 {
+    width: min(366px, 100%);
+    padding: 22px 18px 20px;
+    border-radius: 16px;
+  }
+
+  .admin-login-v2 h1 {
+    font-size: 52px;
+  }
+}
+
+/* Admin login: clean auth actions and inherited theme */
+.admin-login-v2 .admin-login-heading {
+  padding-bottom: 14px;
+}
+
+.admin-login-v2 .google-login-btn {
+  width: 100%;
+  min-height: 44px;
+  margin: 20px 0 6px;
+  border: 1px solid rgba(43, 45, 49, .18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .74);
+  color: #272b31;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: "Oswald", "Roboto Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.admin-login-v2 .google-login-btn:hover {
+  border-color: rgba(43, 45, 49, .34);
+  box-shadow: 0 10px 24px rgba(43, 45, 49, .08);
+  transform: translateY(-1px);
+}
+
+.admin-login-v2 .google-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  color: #2b2d31;
+  display: inline-grid;
+  place-items: center;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px rgba(43, 45, 49, .16);
+  text-transform: none;
+}
+
+.admin-login-v2 .admin-login-form {
+  padding-top: 16px;
+}
+
+.admin-login-v2 .admin-login-footer {
+  margin-top: 14px;
+}
+
+html.dark-mode body.admin-body,
+body.dark-mode.admin-body {
+  background:
+    linear-gradient(rgba(31, 33, 38, .9), rgba(31, 33, 38, .95)),
+    url("assets/bg-silk.png") center top / cover repeat-y;
+  color: #f1ede7;
+}
+
+html.dark-mode .admin-login-v2,
+body.dark-mode .admin-login-v2 {
+  border-color: rgba(255, 255, 255, .12);
+  background: rgba(35, 37, 42, .88);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, .32);
+}
+
+html.dark-mode .admin-login-v2::before,
+body.dark-mode .admin-login-v2::before {
+  background:
+    radial-gradient(circle at 20% 8%, rgba(255, 255, 255, .08), transparent 32%),
+    linear-gradient(135deg, rgba(207, 141, 134, .1), transparent 36%, rgba(255, 255, 255, .035));
+}
+
+html.dark-mode .admin-login-v2 .admin-login-brand,
+html.dark-mode .admin-login-v2 h1,
+html.dark-mode .admin-login-v2 .admin-login-form label,
+html.dark-mode .admin-login-v2 .admin-back-link,
+body.dark-mode .admin-login-v2 .admin-login-brand,
+body.dark-mode .admin-login-v2 h1,
+body.dark-mode .admin-login-v2 .admin-login-form label,
+body.dark-mode .admin-login-v2 .admin-back-link {
+  color: #f3eee8;
+}
+
+html.dark-mode .admin-login-v2 .small-title,
+body.dark-mode .admin-login-v2 .small-title {
+  color: #e0aaa4;
+}
+
+html.dark-mode .admin-login-v2 .admin-login-heading,
+body.dark-mode .admin-login-v2 .admin-login-heading {
+  border-bottom-color: rgba(255, 255, 255, .12);
+}
+
+html.dark-mode .admin-login-v2 input,
+body.dark-mode .admin-login-v2 input {
+  border-color: rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .07);
+  color: #f6f1ec;
+}
+
+html.dark-mode .admin-login-v2 input::placeholder,
+body.dark-mode .admin-login-v2 input::placeholder {
+  color: rgba(246, 241, 236, .56);
+}
+
+html.dark-mode .admin-login-v2 .google-login-btn,
+body.dark-mode .admin-login-v2 .google-login-btn {
+  border-color: rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .08);
+  color: #f3eee8;
+}
+
+html.dark-mode .admin-login-v2 .google-mark,
+body.dark-mode .admin-login-v2 .google-mark {
+  background: rgba(255, 255, 255, .94);
+  color: #202126;
+}
+
+/* Admin login title and button polish */
+.admin-login-v2 h1 {
+  font-size: 48px;
+}
+
+.admin-login-v2 .admin-login-heading {
+  padding-top: 4px;
+  padding-bottom: 16px;
+}
+
+.admin-login-v2 .admin-login-btn {
+  background: #2b2f36;
+  box-shadow: 0 14px 28px rgba(34, 37, 43, .16);
+}
+
+.admin-login-v2 .admin-login-btn:hover {
+  background: #1d2026;
+}
+
+html.dark-mode .admin-login-v2 .admin-login-btn,
+body.dark-mode .admin-login-v2 .admin-login-btn {
+  background: #f4efe9;
+  color: #23262d;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, .22);
+}
+
+html.dark-mode .admin-login-v2 .admin-login-btn:hover,
+body.dark-mode .admin-login-v2 .admin-login-btn:hover {
+  background: #ffffff;
+}
+
+@media(max-width:520px) {
+  .admin-login-v2 h1 {
+    font-size: 44px;
+  }
+}
+
+/* Admin dashboard canvas: remove outer dark frame after login */
+body.admin-body:not(.admin-dashboard-open) .admin-topbar,
+body.admin-body:not(.admin-dashboard-open) .side-menu,
+body.admin-body:not(.admin-dashboard-open) .menu-backdrop {
+  display: none !important;
+}
+
+body.admin-body:not(.admin-dashboard-open) .admin-page {
+  padding-top: 14px;
+}
+
+body.admin-dashboard-open.admin-body {
+  background: #fff;
+}
+
+html.dark-mode body.admin-dashboard-open.admin-body,
+body.dark-mode.admin-dashboard-open.admin-body {
+  background: #202126;
+}
+
+body.admin-dashboard-open .admin-page {
+  display: block;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body.admin-dashboard-open .dashboard {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 30px 24px 42px;
+  border: 0;
+  box-shadow: none;
+  background: rgba(255, 255, 255, .94);
+}
+
+body.dark-mode.admin-dashboard-open .dashboard,
+html.dark-mode body.admin-dashboard-open .dashboard {
+  background: #202126;
+  color: #f1ede7;
+}
+
+@media(max-width:520px) {
+  body.admin-dashboard-open .dashboard {
+    padding: 28px 22px 40px;
+  }
+}
+
+/* Admin topbar: mirror public invitation toolbar */
+.admin-body .admin-topbar {
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  padding-right: 11px !important;
+  padding-left: 10px !important;
+}
+
+.admin-body .admin-topbar .home-cap {
+  order: 1 !important;
+  width: 36px !important;
+  height: 34px !important;
+  min-width: 36px !important;
+  flex: 0 0 36px !important;
+  margin: 0 !important;
+  justify-content: center !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.admin-body .admin-topbar .home-logo {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.admin-body .admin-topbar .toolbar-title {
+  order: 2 !important;
+  width: auto !important;
+  max-width: 132px !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  margin: 0 auto 0 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.admin-body .admin-topbar .theme-btn {
+  order: 3 !important;
+  width: 46px !important;
+  height: 26px !important;
+  min-height: 26px !important;
+  flex: 0 0 46px !important;
+  margin: 0 4px 0 -4px !important;
+}
+
+.admin-body .admin-topbar .floating-music-btn {
+  order: 4 !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  flex: 0 0 36px !important;
+  margin: 0 !important;
+}
+
+.admin-body .admin-topbar .menu-btn {
+  order: 5 !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  flex: 0 0 38px !important;
+  margin: 0 !important;
+}
+
+.admin-body .admin-page {
+  padding-top: 74px;
+}
+
+body.admin-dashboard-open .admin-page {
+  padding-top: 0;
+}
+
+body.admin-dashboard-open .dashboard {
+  padding-top: 78px;
+}
+
+@media(max-width:390px) {
+  .admin-body .admin-topbar {
+    gap: 9px !important;
+    padding-right: 9px !important;
+    padding-left: 9px !important;
+  }
+}
+
+@media(min-width:521px) {
+  body.admin-dashboard-open .admin-topbar {
+    width: min(478px, 100%) !important;
+  }
+
+  body.admin-dashboard-open .admin-page {
+    max-width: 478px;
+  }
+
+  body.admin-dashboard-open .dashboard {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  body.admin-dashboard-open .admin-dashboard-cover {
+    width: calc(100% + 48px);
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+}
+
+/* Admin dashboard cover image */
+.admin-dashboard-cover {
+  width: calc(100% + 48px);
+  height: 300px;
+  margin: -78px -24px 24px;
+  overflow: hidden;
+  background: #e7e4df;
+}
+
+.admin-dashboard-cover img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 34%;
+}
+
+body.dark-mode.admin-dashboard-open .admin-dashboard-cover,
+html.dark-mode body.admin-dashboard-open .admin-dashboard-cover {
+  background: #2b2d31;
+}
+
+@media(max-width:520px) {
+  .admin-dashboard-cover {
+    width: calc(100% + 44px);
+    height: 292px;
+    margin: -78px -22px 22px;
+  }
+}
+
+/* Admin dashboard tabs and update form */
+.admin-tabs {
+  width: 100%;
+  margin: 14px 0 18px;
+  padding: 4px;
+  border: 2px solid rgba(43, 45, 49, .45);
+  border-radius: 999px;
+  background: rgba(43, 45, 49, .08);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.admin-workspace {
+  touch-action: pan-y;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.admin-tab {
+  min-height: 48px;
+  border: 1px solid rgba(43, 45, 49, .28);
+  border-radius: 999px;
+  background: transparent;
+  color: #23262d;
+  cursor: pointer;
+  font: 500 15px/1.2 "Be Vietnam Pro", sans-serif;
+}
+
+.admin-tab.active {
+  background: rgba(255, 255, 255, .86);
+  box-shadow: inset 0 0 0 1px rgba(43, 45, 49, .1), 0 8px 20px rgba(43, 45, 49, .08);
+}
+
+.admin-swipe-hint {
+  margin: -8px 0 22px;
+  color: #6f747c;
+  font-size: 13px;
+  text-align: center;
+}
+
+.admin-swipe-hint::before {
+  content: "⟵";
+  margin-right: 10px;
+  font-size: 22px;
+  vertical-align: -2px;
+}
+
+.admin-swipe-hint::after {
+  content: "⟶";
+  margin-left: 10px;
+  font-size: 22px;
+  vertical-align: -2px;
+}
+
+.admin-mini-countdown {
+  display: grid;
+  grid-template-columns: 1fr 46px;
+  gap: 12px;
+  align-items: center;
+  margin: 10px 0 8px;
+}
+
+.admin-mini-time {
+  min-height: 44px;
+  border: 1px solid rgba(43, 45, 49, .28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .72);
+  color: #333841;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-family: "Oswald", "Roboto Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+.admin-mini-time span {
+  min-width: 28px;
+  text-align: center;
+}
+
+.admin-mini-time b {
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.admin-gift-shortcut {
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(43, 45, 49, .22);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .78);
+  color: #22252b;
+  display: inline-grid;
+  place-items: center;
+  text-decoration: none;
+  font-size: 22px;
+  box-shadow: 0 8px 18px rgba(43, 45, 49, .08);
+}
+
+.admin-gift-shortcut img {
+  width: 26px;
+  height: 26px;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 9px rgba(43, 45, 49, .12));
+}
+
+.admin-panel {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(18px);
+  pointer-events: none;
+  transition:
+    max-height .38s ease,
+    opacity .28s ease,
+    transform .34s ease;
+}
+
+.admin-panel.active {
+  max-height: 2200px;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.admin-panel > * {
+  min-height: initial;
+}
+
+.admin-workspace.tab-back .admin-panel {
+  transform: translateX(-18px);
+}
+
+.admin-workspace.tab-back .admin-panel.active {
+  transform: translateX(0);
+}
+
+.admin-update-form {
+  display: grid;
+  gap: 14px;
+  padding-top: 4px;
+}
+
+.admin-event-preview {
+  margin: 2px 0 26px;
+  padding: 26px 6px 22px;
+  border-bottom: 1px solid rgba(43, 45, 49, .12);
+  text-align: center;
+}
+
+.admin-event-preview .event-time-layout {
+  margin: 0 auto 20px;
+  transform: scale(.92);
+  transform-origin: center top;
+}
+
+.admin-event-preview .event-time-layout,
+.admin-event-preview .event-time-layout span,
+.admin-event-preview .event-time-layout strong,
+.admin-event-preview .event-time-layout em {
+  font-family: "Oswald", "Roboto Condensed", "Be Vietnam Pro", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+}
+
+.event-info-section .event-time-layout,
+.event-info-section .event-time-layout span,
+.event-info-section .event-time-layout strong,
+.event-info-section .event-time-layout em {
+  font-family: "Oswald", "Roboto Condensed", "Be Vietnam Pro", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+}
+
+/* Event time balance: shared by index and admin preview */
+.event-time-layout {
+  grid-template-columns: minmax(86px, 1fr) auto minmax(86px, 1fr);
+  column-gap: 20px;
+  align-items: center;
+}
+
+.event-side {
+  min-width: 86px;
+}
+
+.event-side strong {
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.event-date-core span {
+  transform: translateY(-5px);
+  display: block;
+}
+
+.event-date-core strong {
+  line-height: .82;
+}
+
+.event-date-core em {
+  transform: translateY(5px);
+  display: block;
+}
+
+.admin-event-preview .event-time-layout {
+  grid-template-columns: minmax(86px, 1fr) auto minmax(86px, 1fr);
+  column-gap: 20px;
+}
+
+@media(max-width:390px) {
+  .event-time-layout,
+  .admin-event-preview .event-time-layout {
+    grid-template-columns: minmax(74px, 1fr) auto minmax(74px, 1fr);
+    column-gap: 14px;
+  }
+
+  .event-side {
+    min-width: 74px;
+  }
+
+  .event-side strong {
+    font-size: 14px;
+  }
+}
+
+.admin-event-preview .event-location-block {
+  padding: 0;
+}
+
+.admin-event-preview .event-location-label {
+  margin-top: -8px;
+}
+
+.admin-event-preview .event-school {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 350px;
+}
+
+.admin-event-preview .event-address {
+  margin-bottom: 0;
+}
+
+.admin-update-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.admin-update-grid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.admin-update-form label {
+  display: grid;
+  gap: 7px;
+  color: #333841;
+  font-family: "Oswald", "Roboto Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.admin-update-form input,
+.admin-update-form textarea {
+  min-height: 42px;
+  border: 1px solid rgba(43, 45, 49, .2);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .72);
+  color: #252930;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.admin-update-form textarea {
+  border-radius: 14px;
+}
+
+.admin-update-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.admin-update-actions .submit-btn,
+.admin-update-actions .outline-btn {
+  width: 100%;
+  margin: 0;
+}
+
+.admin-update-note {
+  margin: 0;
+  color: #777c84;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.admin-save-message {
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  color: #2f6b4f;
+  background: rgba(223, 244, 233, .76);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .24s ease, transform .24s ease, padding .24s ease, margin .24s ease;
+}
+
+.admin-save-message.show {
+  margin-top: 2px;
+  padding: 9px 14px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.dark-mode.admin-dashboard-open .admin-tabs,
+html.dark-mode body.admin-dashboard-open .admin-tabs {
+  border-color: rgba(255, 255, 255, .4);
+  background: rgba(255, 255, 255, .08);
+}
+
+body.dark-mode.admin-dashboard-open .admin-tab,
+html.dark-mode body.admin-dashboard-open .admin-tab {
+  border-color: rgba(255, 255, 255, .2);
+  color: #f5efe9;
+}
+
+body.dark-mode.admin-dashboard-open .admin-tab.active,
+html.dark-mode body.admin-dashboard-open .admin-tab.active {
+  background: rgba(255, 255, 255, .16);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+}
+
+body.dark-mode.admin-dashboard-open .admin-swipe-hint,
+body.dark-mode.admin-dashboard-open .admin-update-note,
+html.dark-mode body.admin-dashboard-open .admin-swipe-hint,
+html.dark-mode body.admin-dashboard-open .admin-update-note {
+  color: rgba(245, 239, 233, .68);
+}
+
+body.dark-mode.admin-dashboard-open .admin-save-message,
+html.dark-mode body.admin-dashboard-open .admin-save-message {
+  background: rgba(89, 130, 108, .24);
+  color: #d9f0e2;
+}
+
+body.dark-mode.admin-dashboard-open .admin-mini-time,
+body.dark-mode.admin-dashboard-open .admin-gift-shortcut,
+html.dark-mode body.admin-dashboard-open .admin-mini-time,
+html.dark-mode body.admin-dashboard-open .admin-gift-shortcut {
+  border-color: rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, .08);
+  color: #f5efe9;
+}
+
+body.dark-mode.admin-dashboard-open .admin-gift-shortcut img,
+html.dark-mode body.admin-dashboard-open .admin-gift-shortcut img {
+  filter: drop-shadow(0 5px 9px rgba(0, 0, 0, .35));
+}
+
+/* Dark mode polish: keep the gift shortcut clean and visible */
+body.dark-mode.admin-dashboard-open .admin-gift-shortcut,
+html.dark-mode body.admin-dashboard-open .admin-gift-shortcut {
+  border-color: rgba(255, 255, 255, .22);
+  background: rgba(255, 255, 255, .13);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .06),
+    0 10px 22px rgba(0, 0, 0, .2);
+}
+
+body.dark-mode.admin-dashboard-open .admin-gift-shortcut img,
+html.dark-mode body.admin-dashboard-open .admin-gift-shortcut img {
+  filter:
+    brightness(1.08)
+    saturate(1.05)
+    drop-shadow(0 5px 9px rgba(0, 0, 0, .36));
+  opacity: .96;
+}
+
+body.dark-mode.admin-dashboard-open .admin-update-form label,
+html.dark-mode body.admin-dashboard-open .admin-update-form label {
+  color: #f5efe9;
+}
+
+body.dark-mode.admin-dashboard-open .admin-event-preview,
+html.dark-mode body.admin-dashboard-open .admin-event-preview {
+  border-bottom-color: rgba(255, 255, 255, .12);
+}
+
+body.dark-mode.admin-dashboard-open .admin-update-form input,
+body.dark-mode.admin-dashboard-open .admin-update-form textarea,
+html.dark-mode body.admin-dashboard-open .admin-update-form input,
+html.dark-mode body.admin-dashboard-open .admin-update-form textarea {
+  border-color: rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .07);
+  color: #f5efe9;
+}
+
+@media(max-width:390px) {
+  .admin-tab {
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  .admin-update-grid,
+  .admin-update-grid.two {
+    gap: 8px;
+  }
+}
+
+/* Admin dashboard greeting name */
+.admin-top .admin-dashboard-name {
+  margin: 0;
+  color: #2b2d31;
+  font-family: "Allura", "Great Vibes", cursive;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+  text-shadow: none;
+}
+
+.admin-top:has(.admin-dashboard-name) {
+  display: block;
+  text-align: center;
+}
+
+body.dark-mode.admin-dashboard-open .admin-top .admin-dashboard-name,
+html.dark-mode body.admin-dashboard-open .admin-top .admin-dashboard-name {
+  color: #f2ede7;
+}
+
+@media(max-width:390px) {
+  .admin-top .admin-dashboard-name {
+    font-size: 48px;
+  }
+}
+
+/* Admin tab polish: sliding pill indicator */
+.admin-tabs {
+  position: relative;
+  isolation: isolate;
+  margin: 16px 0 20px;
+  padding: 5px;
+  border: 1px solid rgba(43, 45, 49, .18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .88), rgba(246, 246, 244, .72));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .66),
+    0 8px 24px rgba(43, 45, 49, .08);
+}
+
+.admin-tabs::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 5px;
+  left: 5px;
+  width: calc(50% - 7px);
+  height: calc(100% - 10px);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .96);
+  box-shadow:
+    0 8px 18px rgba(43, 45, 49, .1),
+    inset 0 0 0 1px rgba(43, 45, 49, .08);
+  transition: transform .34s cubic-bezier(.22, 1, .36, 1);
+}
+
+.admin-workspace.tab-update-active .admin-tabs::before {
+  transform: translateX(calc(100% + 4px));
+}
+
+.admin-tab {
+  position: relative;
+  z-index: 1;
+  min-height: 42px;
+  border: 0;
+  background: transparent;
+  color: #3e4249;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color .22s ease, transform .22s ease;
+}
+
+.admin-tab.active {
+  background: transparent;
+  box-shadow: none;
+  color: #171a20;
+  transform: translateY(-1px);
+}
+
+.admin-panel {
+  transform: translateX(22px) translateY(4px);
+  transition:
+    max-height .42s cubic-bezier(.22, 1, .36, 1),
+    opacity .26s ease,
+    transform .34s cubic-bezier(.22, 1, .36, 1);
+}
+
+.admin-workspace.tab-back .admin-panel {
+  transform: translateX(-22px) translateY(4px);
+}
+
+.admin-panel.active,
+.admin-workspace.tab-back .admin-panel.active {
+  transform: translateX(0) translateY(0);
+}
+
+body.dark-mode.admin-dashboard-open .admin-tabs,
+html.dark-mode body.admin-dashboard-open .admin-tabs {
+  border-color: rgba(255, 255, 255, .16);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .06));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .06),
+    0 8px 24px rgba(0, 0, 0, .18);
+}
+
+body.dark-mode.admin-dashboard-open .admin-tabs::before,
+html.dark-mode body.admin-dashboard-open .admin-tabs::before {
+  background: rgba(255, 255, 255, .16);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+}
+
+body.dark-mode.admin-dashboard-open .admin-tab,
+html.dark-mode body.admin-dashboard-open .admin-tab {
+  color: rgba(245, 239, 233, .72);
+}
+
+body.dark-mode.admin-dashboard-open .admin-tab.active,
+html.dark-mode body.admin-dashboard-open .admin-tab.active {
+  color: #fffaf4;
+}
+
+/* Admin tabs as touch-follow overlay panels */
+.admin-panel-viewport {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-x: clip;
+  position: relative;
+  contain: paint;
+}
+
+.admin-panel-track {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  overflow-anchor: none;
+}
+
+body.admin-dashboard-open {
+  overflow-x: hidden;
+  overflow-anchor: none;
+}
+
+html:has(body.admin-dashboard-open) {
+  overflow-x: hidden;
+}
+
+body.admin-dashboard-open .admin-page,
+body.admin-dashboard-open .dashboard,
+body.admin-dashboard-open .admin-workspace,
+body.admin-dashboard-open .admin-panel-viewport {
+  overflow-x: hidden;
+  overflow-anchor: none;
+}
+
+.admin-panel-track .admin-panel {
+  display: none;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.admin-panel-track .admin-panel.active {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.admin-panel-track .admin-panel.dragging,
+.admin-panel-track .admin-panel.drag-target {
+  display: block;
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  opacity: 1;
+  z-index: 2;
+  will-change: transform;
+}
+
+.admin-panel-track .admin-panel.drag-target {
+  z-index: 1;
+}
+
+.admin-panel-track .admin-panel:not(.active):not(.drag-target) {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+
+/* Admin guestbook overview: compact professional stats */
+.guestbook-overview {
+  padding: 6px 0 4px;
+}
+
+.guestbook-stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  align-items: stretch;
+}
+
+.guestbook-stat-item {
+  min-width: 0;
+  min-height: 82px;
+  padding: 11px 7px 10px;
+  border: 1px solid rgba(43, 45, 49, .12);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .9), rgba(249, 248, 246, .72));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .82),
+    0 12px 26px rgba(43, 45, 49, .055);
+  display: grid;
+  align-content: center;
+  gap: 7px;
+  text-align: center;
+}
+
+.guestbook-stat-main {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.guestbook-stat-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(207, 141, 134, .14);
+  color: #b96f69;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 24px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.guestbook-stat-item strong {
+  color: #2f3339;
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .2px;
+}
+
+.guestbook-stat-item > span {
+  color: #6b7078;
+  font-family: "Roboto Condensed", "Oswald", "Be Vietnam Pro", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-stat-item,
+html.dark-mode body.admin-dashboard-open .guestbook-stat-item {
+  border-color: rgba(255, 255, 255, .12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .04));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .08),
+    0 14px 30px rgba(0, 0, 0, .14);
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-stat-icon,
+html.dark-mode body.admin-dashboard-open .guestbook-stat-icon {
+  background: rgba(224, 170, 164, .18);
+  color: #f0c4bd;
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-stat-item strong,
+html.dark-mode body.admin-dashboard-open .guestbook-stat-item strong {
+  color: #f6f0ea;
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-stat-item > span,
+html.dark-mode body.admin-dashboard-open .guestbook-stat-item > span {
+  color: rgba(245, 239, 233, .68);
+}
+
+@media(max-width:390px) {
+  .guestbook-stat-row {
+    gap: 6px;
+  }
+
+  .guestbook-stat-item {
+    min-height: 76px;
+    padding: 9px 5px;
+    border-radius: 15px;
+  }
+
+  .guestbook-stat-main {
+    gap: 4px;
+  }
+
+  .guestbook-stat-icon {
+    width: 21px;
+    height: 21px;
+    flex-basis: 21px;
+    font-size: 12px;
+  }
+
+  .guestbook-stat-item strong {
+    font-size: 21px;
+  }
+
+  .guestbook-stat-item > span {
+    font-size: 10px;
+  }
+}
+
+/* Admin guestbook stats: image icons and refined numbers */
+.guestbook-stat-item {
+  min-height: 74px;
+  padding: 10px 6px;
+  border-radius: 20px;
+}
+
+.guestbook-stat-main {
+  gap: 6px;
+}
+
+.guestbook-stat-icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 0;
+  background: transparent;
+  object-fit: contain;
+  filter: drop-shadow(0 7px 10px rgba(43, 45, 49, .16));
+}
+
+.guestbook-stat-item strong {
+  min-width: 24px;
+  color: #2b2f36;
+  font-family: "Oswald", "Roboto Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: .9;
+  letter-spacing: .8px;
+  text-align: left;
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-stat-icon,
+html.dark-mode body.admin-dashboard-open .guestbook-stat-icon {
+  background: transparent;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, .28));
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-stat-item strong,
+html.dark-mode body.admin-dashboard-open .guestbook-stat-item strong {
+  color: #fff7ee;
+}
+
+@media(max-width:390px) {
+  .guestbook-stat-item {
+    min-height: 68px;
+    padding: 9px 4px;
+    border-radius: 17px;
+  }
+
+  .guestbook-stat-main {
+    gap: 4px;
+  }
+
+  .guestbook-stat-icon {
+    width: 29px;
+    height: 29px;
+    flex-basis: 29px;
+  }
+
+  .guestbook-stat-item strong {
+    min-width: 20px;
+    font-size: 26px;
+  }
+}
+
+/* Admin guestbook stats: compact height aligned with tab control */
+.guestbook-overview {
+  padding: 0;
+}
+
+.guestbook-stat-row {
+  gap: 7px;
+}
+
+.guestbook-stat-item {
+  min-height: 50px;
+  padding: 6px 5px;
+  border-radius: 999px;
+}
+
+.guestbook-stat-main {
+  gap: 4px;
+}
+
+.guestbook-stat-icon {
+  width: 24px;
+  height: 24px;
+  flex-basis: 24px;
+  filter: drop-shadow(0 4px 7px rgba(43, 45, 49, .13));
+}
+
+.guestbook-stat-item strong {
+  min-width: 18px;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: .35px;
+}
+
+@media(max-width:390px) {
+  .guestbook-stat-row {
+    gap: 5px;
+  }
+
+  .guestbook-stat-item {
+    min-height: 46px;
+    padding: 5px 4px;
+  }
+
+  .guestbook-stat-icon {
+    width: 21px;
+    height: 21px;
+    flex-basis: 21px;
+  }
+
+  .guestbook-stat-item strong {
+    min-width: 16px;
+    font-size: 20px;
+  }
+}
+
+/* Admin guestbook reset: ready for the next design direction */
+.admin-guestbook-empty {
+  min-height: 0;
+  padding: 0;
+}
+
+/* Admin guestbook redesign: fixed scroll frame, filters and sorting */
+.admin-guestbook-board {
+  padding: 4px 0 0;
+}
+
+.guestbook-board-top {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.guestbook-board-top p {
+  margin: 0;
+  color: #292d34;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.guestbook-icon-btn,
+.guestbook-sort-btn {
+  position: relative;
+  width: 43px;
+  height: 43px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.guestbook-icon-btn img,
+.guestbook-sort-btn img {
+  width: 31px;
+  height: 31px;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(43, 45, 49, .12));
+}
+
+.guestbook-icon-btn.active::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: rgba(207, 141, 134, .12);
+  box-shadow: inset 0 0 0 1px rgba(207, 141, 134, .28);
+  z-index: -1;
+}
+
+.guestbook-badge {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .92);
+  color: #2c3036;
+  display: inline-grid;
+  place-items: center;
+  font-family: "Oswald", "Roboto Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  box-shadow: 0 4px 10px rgba(43, 45, 49, .12);
+}
+
+.guestbook-sort-btn {
+  justify-self: end;
+}
+
+.guestbook-sort-btn.oldest-first img {
+  transform: scaleY(-1);
+}
+
+.guestbook-message-frame {
+  height: 292px;
+  padding: 18px 14px;
+  border: 1px solid rgba(43, 45, 49, .22);
+  border-radius: 28px 8px 28px 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .66), rgba(255, 255, 255, .38));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .74),
+    0 18px 34px rgba(43, 45, 49, .055);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(43, 45, 49, .42) transparent;
+}
+
+.guestbook-message-list {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-guest-message {
+  padding: 0 0 12px;
+  border-bottom: 1px solid rgba(43, 45, 49, .12);
+  text-align: left;
+}
+
+.admin-guest-message:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-guest-message-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.admin-guest-message strong {
+  color: #22262d;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.admin-guest-message-head span {
+  flex: 0 0 auto;
+  color: #cf8d86;
+  font-family: "Roboto Condensed", "Oswald", "Be Vietnam Pro", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.admin-guest-message p {
+  margin: 7px 0 5px;
+  color: #4d535c;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.admin-guest-message time {
+  color: #90959d;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.guestbook-message-frame .empty-guest {
+  margin: 0;
+  padding: 80px 10px 0;
+  border: 0;
+  color: #858a92;
+  font-size: 13px;
+  text-align: center;
+}
+
+.guestbook-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: min(260px, 82%);
+  margin: 16px auto 0;
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-board-top p,
+html.dark-mode body.admin-dashboard-open .guestbook-board-top p,
+body.dark-mode.admin-dashboard-open .admin-guest-message strong,
+html.dark-mode body.admin-dashboard-open .admin-guest-message strong {
+  color: #f6f0ea;
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-message-frame,
+html.dark-mode body.admin-dashboard-open .guestbook-message-frame {
+  border-color: rgba(255, 255, 255, .16);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .035));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .06),
+    0 18px 34px rgba(0, 0, 0, .16);
+  scrollbar-color: rgba(255, 255, 255, .42) transparent;
+}
+
+body.dark-mode.admin-dashboard-open .admin-guest-message,
+html.dark-mode body.admin-dashboard-open .admin-guest-message {
+  border-bottom-color: rgba(255, 255, 255, .1);
+}
+
+body.dark-mode.admin-dashboard-open .admin-guest-message p,
+html.dark-mode body.admin-dashboard-open .admin-guest-message p {
+  color: rgba(245, 239, 233, .74);
+}
+
+body.dark-mode.admin-dashboard-open .admin-guest-message time,
+html.dark-mode body.admin-dashboard-open .admin-guest-message time {
+  color: rgba(245, 239, 233, .48);
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-badge,
+html.dark-mode body.admin-dashboard-open .guestbook-badge {
+  background: rgba(32, 33, 38, .92);
+  color: #fff7ee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .24);
+}
+
+@media(max-width:390px) {
+  .guestbook-board-top {
+    grid-template-columns: 42px 1fr 42px;
+    gap: 6px;
+  }
+
+  .guestbook-icon-btn,
+  .guestbook-sort-btn {
+    width: 39px;
+    height: 39px;
+  }
+
+  .guestbook-icon-btn img,
+  .guestbook-sort-btn img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .guestbook-message-frame {
+    height: 278px;
+    padding: 16px 13px;
+  }
+
+  .guestbook-filter-row {
+    width: min(238px, 84%);
+  }
+}
+
+/* Fix: keep admin guestbook icons readable in dark mode */
+body.dark-mode.admin-dashboard-open .guestbook-icon-btn,
+body.dark-mode.admin-dashboard-open .guestbook-sort-btn,
+html.dark-mode body.admin-dashboard-open .guestbook-icon-btn,
+html.dark-mode body.admin-dashboard-open .guestbook-sort-btn {
+  background: rgba(255, 255, 255, .09);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .13),
+    0 8px 18px rgba(0, 0, 0, .18);
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-icon-btn img,
+body.dark-mode.admin-dashboard-open .guestbook-sort-btn img,
+html.dark-mode body.admin-dashboard-open .guestbook-icon-btn img,
+html.dark-mode body.admin-dashboard-open .guestbook-sort-btn img {
+  filter:
+    brightness(0)
+    invert(1)
+    drop-shadow(0 5px 9px rgba(0, 0, 0, .34));
+  opacity: .92;
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-icon-btn.active,
+html.dark-mode body.admin-dashboard-open .guestbook-icon-btn.active {
+  background: rgba(244, 220, 154, .16);
+  box-shadow:
+    inset 0 0 0 1px rgba(244, 220, 154, .28),
+    0 8px 20px rgba(0, 0, 0, .2);
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-icon-btn.active img,
+html.dark-mode body.admin-dashboard-open .guestbook-icon-btn.active img {
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(87%)
+    sepia(44%)
+    saturate(650%)
+    hue-rotate(347deg)
+    brightness(104%)
+    contrast(96%)
+    drop-shadow(0 5px 9px rgba(0, 0, 0, .34));
+  opacity: 1;
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-badge,
+html.dark-mode body.admin-dashboard-open .guestbook-badge {
+  background: rgba(255, 255, 255, .95);
+  color: #202126;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .28);
+}
+
+/* Polish: admin guestbook board balance and visual hierarchy */
+.admin-guestbook-board {
+  padding: 2px 4px 0;
+}
+
+.guestbook-board-top {
+  grid-template-columns: 42px 1fr 42px;
+  gap: 10px;
+  width: min(304px, 100%);
+  margin: 0 auto 12px;
+}
+
+.guestbook-board-top p {
+  color: #30343a;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -.1px;
+}
+
+.guestbook-icon-btn,
+.guestbook-sort-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .72);
+  box-shadow:
+    inset 0 0 0 1px rgba(43, 45, 49, .08),
+    0 8px 18px rgba(43, 45, 49, .055);
+  transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.guestbook-icon-btn:active,
+.guestbook-sort-btn:active {
+  transform: scale(.96);
+}
+
+.guestbook-icon-btn img,
+.guestbook-sort-btn img {
+  width: 25px;
+  height: 25px;
+}
+
+.guestbook-sort-btn img {
+  width: 27px;
+  height: 27px;
+}
+
+.guestbook-icon-btn.active::before {
+  inset: 2px;
+  background: rgba(207, 141, 134, .13);
+}
+
+.guestbook-badge {
+  top: -1px;
+  right: -2px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.guestbook-message-frame {
+  width: min(304px, 100%);
+  height: 258px;
+  margin: 0 auto;
+  padding: 14px 13px;
+  border-color: rgba(43, 45, 49, .13);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .88), rgba(255, 255, 255, .62));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .78),
+    0 16px 30px rgba(43, 45, 49, .055);
+}
+
+.guestbook-message-list {
+  gap: 10px;
+}
+
+.admin-guest-message {
+  padding-bottom: 11px;
+  border-bottom-color: rgba(43, 45, 49, .09);
+}
+
+.admin-guest-message strong {
+  font-size: 13.5px;
+}
+
+.admin-guest-message-head span {
+  font-size: 10.5px;
+  letter-spacing: .15px;
+}
+
+.admin-guest-message p {
+  margin: 6px 0 4px;
+  font-size: 12.8px;
+  line-height: 1.55;
+}
+
+.guestbook-filter-row {
+  width: min(246px, 78%);
+  margin: 13px auto 0;
+  padding: 4px 8px;
+  border: 1px solid rgba(43, 45, 49, .08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .56);
+  box-shadow: 0 12px 24px rgba(43, 45, 49, .04);
+}
+
+.admin-guestbook-board.filter-fixed {
+  padding-bottom: 66px;
+}
+
+.guestbook-filter-row.guestbook-filter-fixed {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--guestbook-filter-bottom, 22px) + env(safe-area-inset-bottom));
+  z-index: 96;
+  width: min(246px, 78vw, 335px);
+  margin: 0;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, .82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 16px 32px rgba(43, 45, 49, .12),
+    inset 0 0 0 1px rgba(255, 255, 255, .72);
+}
+
+.guestbook-filter-row .guestbook-icon-btn {
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.guestbook-filter-row .guestbook-icon-btn img {
+  width: 23px;
+  height: 23px;
+}
+
+.guestbook-filter-row .guestbook-icon-btn.active {
+  background: rgba(207, 141, 134, .1);
+  box-shadow: inset 0 0 0 1px rgba(207, 141, 134, .2);
+}
+
+.guestbook-filter-row .guestbook-badge {
+  top: -3px;
+  right: -3px;
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-board-top p,
+html.dark-mode body.admin-dashboard-open .guestbook-board-top p {
+  color: rgba(255, 248, 241, .9);
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-message-frame,
+html.dark-mode body.admin-dashboard-open .guestbook-message-frame {
+  border-color: rgba(255, 255, 255, .14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .085), rgba(255, 255, 255, .045));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .055),
+    0 16px 30px rgba(0, 0, 0, .16);
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-filter-row,
+html.dark-mode body.admin-dashboard-open .guestbook-filter-row {
+  border-color: rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, .055);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, .12);
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-filter-row.guestbook-filter-fixed,
+html.dark-mode body.admin-dashboard-open .guestbook-filter-row.guestbook-filter-fixed {
+  background: rgba(44, 46, 52, .88);
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, .22),
+    inset 0 0 0 1px rgba(255, 255, 255, .08);
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-filter-row .guestbook-icon-btn,
+html.dark-mode body.admin-dashboard-open .guestbook-filter-row .guestbook-icon-btn {
+  background: transparent;
+  box-shadow: none;
+}
+
+body.dark-mode.admin-dashboard-open .guestbook-filter-row .guestbook-icon-btn.active,
+html.dark-mode body.admin-dashboard-open .guestbook-filter-row .guestbook-icon-btn.active {
+  background: rgba(244, 220, 154, .15);
+  box-shadow: inset 0 0 0 1px rgba(244, 220, 154, .25);
+}
+
+@media(max-width:390px) {
+  .admin-guestbook-board {
+    padding-inline: 2px;
+  }
+
+  .guestbook-board-top,
+  .guestbook-message-frame {
+    width: min(296px, 100%);
+  }
+
+  .guestbook-message-frame {
+    height: 250px;
+  }
+
+  .guestbook-filter-row {
+    width: min(232px, 80%);
+  }
+}
+
+/* Behavior: guestbook frame can gently expand while the cover scrolls away */
+.admin-guestbook-board {
+  --guestbook-frame-height: 258px;
+}
+
+.guestbook-message-frame {
+  height: var(--guestbook-frame-height, 258px);
+  transition: none;
+}
+
+@media(max-width:390px) {
+  .admin-guestbook-board {
+    --guestbook-frame-height: 250px;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  .guestbook-message-frame {
+    transition: none;
+  }
+}
+
+/* Trim: avoid unnecessary empty space under the final admin controls */
+body.admin-dashboard-open .dashboard {
+  padding-bottom: 42px;
+}
+
+@media(max-width:520px) {
+  body.admin-dashboard-open .dashboard {
+    padding-bottom: 46px;
+  }
+}
+
+/* Final: fixed guestbook frame, no dynamic stretching */
+.admin-guestbook-board,
+.admin-guestbook-board.filter-fixed {
+  padding-bottom: 0;
+}
+
+.guestbook-message-frame {
+  height: auto;
+  aspect-ratio: 2 / 3;
+  min-height: 0;
+  max-height: none;
+}
+
+.guestbook-filter-row,
+.guestbook-filter-row.guestbook-filter-fixed {
+  position: static;
+  left: auto;
+  bottom: auto;
+  z-index: auto;
+  width: min(304px, 100%);
+  margin: 16px auto 34px;
+  transform: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+@media(max-width:390px) {
+  .guestbook-message-frame {
+    height: auto;
+    aspect-ratio: 2 / 3;
+  }
+
+  .guestbook-filter-row,
+  .guestbook-filter-row.guestbook-filter-fixed {
+    width: min(296px, 100%);
+    margin-bottom: 38px;
+  }
+}
+
+/* Update tab: keep room for the save confirmation near the bottom */
+#updatePanel {
+  padding-bottom: 54px;
+}
+
+#updatePanel .admin-save-message {
+  min-height: 22px;
+  margin-bottom: 18px;
+}
+
+@media(max-width:520px) {
+  #updatePanel {
+    padding-bottom: 62px;
+  }
+}

@@ -3,7 +3,7 @@ window.INVITATION_CONFIG = {
     quote: "“Hi vọng trong bức tranh thanh xuân của tớ sẽ có sự góp mặt của cậu.”",
     introMessage: "Sau những tháng ngày cố gắng, mình rất vui khi được mời bạn đến tham dự lễ tốt nghiệp của mình.",
     inviteLine: "Cô chú, anh chị, bạn bè tới dự lễ tốt nghiệp",
-    dateNote: "Lễ tốt nghiệp được tổ chức<br>vào lúc 07 giờ 30 phút",
+    dateNote: "Lễ tốt nghiệp được tổ chức<br>vào lúc 10:00 - 12:00",
     school: "Trường Đại học Kinh tế - Đại học Quốc gia Hà Nội",
     hall: "Hội trường MMH",
     address: "Số 57 Phạm Hùng, Nam Từ Liêm, Hà Nội",
