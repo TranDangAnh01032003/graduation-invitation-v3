@@ -8,18 +8,18 @@ The project is a personal digital invitation / memory website, not a corporate l
 
 Current project stage:
 - Static HTML/CSS/JS.
-- Local demo uses `localStorage` and `sessionStorage`.
-- The next professional direction is Supabase Auth + Supabase Database + Row Level Security.
-- Public admin login is allowed in the menu, but admin data and private gift content must be protected by real authentication in the production version.
+- Supabase is configured for public guestbook inserts and authorized admin guestbook reads.
+- Admin login uses Supabase Google Auth plus `admin_users` permissions.
+- Private gift content is still guarded only by demo `sessionStorage` logic and must be protected before production gift release.
 
 ## Current Source Files
 
 Core files:
 - `index.html` — public invitation page.
-- `admin.html` — admin login/dashboard page, currently demo-only.
+- `admin.html` — admin login/dashboard page using Supabase Google Auth for guestbook reading.
 - `gift.html` — private gift page, currently guarded only by demo session logic.
 - `config.js` — editable invitation text configuration.
-- `script.js` — UI behavior, countdown, menu, music, demo guestbook, demo admin, demo gift guard.
+- `script.js` — UI behavior, countdown, menu, music, Supabase guestbook insert/read, admin auth, and demo gift guard.
 - `style.css` — all visual styling, including many accumulated override sections.
 
 Important:
@@ -69,21 +69,17 @@ Important:
 ## Current Admin Page Structure
 
 `admin.html` currently includes:
-- Demo login card.
-- Username/password inputs.
-- A demo button calling `fakeLogin()`.
-- Text warning that this is a local demo.
+- Login card with Google Login.
+- Supabase Auth session/permission check.
 - Dashboard card after login:
   - greeting
   - open invitation button
   - logout button
   - stats: total, attending, maybe, cannot attend
   - open gift button
-  - clear demo data button
-  - guestbook list
+  - guestbook list loaded from Supabase for authorized users
 
 Production rule:
-- `fakeLogin()` must be removed or replaced before public production.
 - No hard-coded credentials in frontend.
 - No frontend-only hash/password check as real security.
 

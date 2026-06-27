@@ -4,11 +4,12 @@
 
 The public invitation can be visible to everyone, but guestbook reading, admin dashboard, and private gift content must be protected in the production version.
 
-Current state is demo-only:
-- `fakeLogin()` in `script.js` is not authentication.
-- `localStorage` is not a production database.
-- `sessionStorage` is not authorization.
-- `gift.html?from=admin` is only a local/demo convenience.
+Current state:
+- Public guestbook insert uses Supabase `guestbook_entries`.
+- Admin guestbook reading uses Supabase Google Auth and `admin_users` permissions.
+- `localStorage` remains only as a fallback/demo path when Supabase is unavailable.
+- `sessionStorage` is still not authorization.
+- `gift.html?from=admin` is only a local/demo convenience and must be replaced before private gift release.
 
 ## Threat Model
 
@@ -289,7 +290,7 @@ Phase 1:
 Phase 2:
 - Add Supabase client.
 - Add Google Login.
-- Replace `fakeLogin()`.
+- Replace fake login with Supabase Auth.
 - Add logout and session restoration.
 
 Phase 3:

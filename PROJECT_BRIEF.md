@@ -52,10 +52,11 @@ Current files:
 - `script.js`
 - `style.css`
 
-The current version is not yet production-secure. It is a local/static demo with:
-- demo guestbook stored in `localStorage`
-- demo admin login using `fakeLogin()`
-- demo gift guard using URL parameter and `sessionStorage`
+The current version is partially connected to Supabase:
+- public guestbook submissions insert into `guestbook_entries`
+- admin login uses Supabase Google Auth
+- authorized admin/owner users can read guestbook entries through RLS
+- private gift access is still demo-only through URL parameter and `sessionStorage`
 
 ## Public User Flow
 
@@ -91,10 +92,10 @@ They can:
 5. Manage or preview content depending on role.
 6. Open the private gift page if permission allows.
 
-Current demo admin page:
-- has username/password inputs
-- any input works because it calls `fakeLogin()`
-- displays local demo guestbook data
+Current admin page:
+- uses Google Login through Supabase Auth
+- checks `admin_users` permissions
+- displays Supabase guestbook data for authorized users
 
 ## Private Gift Flow
 

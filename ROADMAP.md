@@ -10,13 +10,13 @@ Current working parts:
 - theme toggle
 - side menu
 - event information
-- guestbook form using localStorage demo
-- admin dashboard using fake login demo
+- guestbook form inserting into Supabase with localStorage fallback
+- admin dashboard using Supabase Google Auth and RLS-protected guestbook reads
 - gift page using sessionStorage demo guard
 - countdown
 
 Main risk:
-- Current admin/gift/guestbook security is demo-only and not production-safe.
+- Gift access is still demo-only and not production-safe.
 
 ## Phase 0 — Preserve Current Direction
 
@@ -92,22 +92,22 @@ Rules:
 
 ## Phase 3 — Supabase Project Setup
 
-Status: Planned
+Status: In progress
 
 Goal:
 - Prepare real backend/auth.
 
 Tasks:
-- [ ] Create Supabase project.
-- [ ] Configure production URL and local URL.
-- [ ] Enable Google provider.
-- [ ] Add authorized redirect URLs.
-- [ ] Create `guestbook_entries` table.
-- [ ] Create `admin_users` table.
-- [ ] Enable RLS.
-- [ ] Add policies from `SECURITY_PLAN.md`.
+- [x] Create Supabase project.
+- [x] Configure production URL and local URL.
+- [x] Enable Google provider.
+- [x] Add authorized redirect URLs.
+- [x] Create `guestbook_entries` table.
+- [x] Create `admin_users` table.
+- [x] Enable RLS.
+- [x] Add policies from `SECURITY_PLAN.md`.
 - [ ] Add Quỳnh as `owner`.
-- [ ] Add website creator as `admin`.
+- [x] Add website creator as `admin`.
 
 Definition of done:
 - Supabase Auth works.
@@ -116,17 +116,17 @@ Definition of done:
 
 ## Phase 4 — Replace Demo Guestbook
 
-Status: Planned
+Status: In progress
 
 Goal:
 - Move guestbook from localStorage to Supabase.
 
 Tasks:
-- [ ] Keep public form in `index.html`.
-- [ ] On submit, insert to Supabase `guestbook_entries`.
-- [ ] Add loading state.
-- [ ] Add success state.
-- [ ] Add error state.
+- [x] Keep public form in `index.html`.
+- [x] On submit, insert to Supabase `guestbook_entries`.
+- [x] Add loading state.
+- [x] Add success state.
+- [x] Add error state.
 - [ ] Keep form fields minimal.
 - [ ] Remove default demo guests from production path.
 - [ ] Keep `escapeHtml()` or equivalent for dashboard rendering.
@@ -138,20 +138,20 @@ Definition of done:
 
 ## Phase 5 — Replace Demo Admin Login
 
-Status: Planned
+Status: In progress
 
 Goal:
-- Replace `fakeLogin()` with real Supabase Auth.
+- Use real Supabase Auth for admin access.
 
 Tasks:
-- [ ] Replace username/password demo or keep as visual only until converted.
-- [ ] Add Google Login button.
-- [ ] Implement auth state listener.
-- [ ] Load current user's `admin_users` permission row.
-- [ ] If unauthorized, show access denied.
-- [ ] If authorized, show dashboard.
-- [ ] Implement logout.
-- [ ] Remove `fakeLogin()` from production path.
+- [x] Replace username/password demo or keep as visual only until converted.
+- [x] Add Google Login button.
+- [x] Implement auth state listener.
+- [x] Load current user's `admin_users` permission row.
+- [x] If unauthorized, show access denied.
+- [x] If authorized, show dashboard.
+- [x] Implement logout.
+- [x] Remove fake login from production path.
 
 Definition of done:
 - Public sees login page.
