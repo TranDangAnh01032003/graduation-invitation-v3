@@ -4,34 +4,92 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Món quà dành cho Quỳnh</title>
+  <meta name="description" content="Món quà riêng dành cho Phạm Như Quỳnh trong ngày tốt nghiệp." />
   <link rel="icon" href="assets/ueb-logo-transparent.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Great+Vibes&family=Oswald:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    if (localStorage.getItem("graduation-theme") === "dark") {
+      document.documentElement.classList.add("dark-mode");
+    }
+  </script>
 </head>
 <body data-page="gift">
-  <main class="mobile-page gift-page">
-    <section class="section gift-guard hidden" id="giftGuard">
-      <p class="small-title">Private Gift</p>
-      <h1>Món quà riêng</h1>
-      <p class="gift-text">Trang này là món quà riêng, chỉ mở từ trang admin.</p>
-      <a href="admin.html" class="outline-btn">Đăng nhập Admin</a>
-      <a href="index.html" class="admin-back-link">← Quay lại lời mời</a>
+  <audio id="bgMusic" loop preload="none"><source src="assets/music.mp3" type="audio/mpeg"></audio>
+  <header class="topbar toolbar-solid toolbar-title-visible gift-topbar">
+    <a href="index.html" class="home-cap" aria-label="Quay lại thiệp mời"><img src="assets/ueb-logo-transparent.png" alt="UEB" class="home-logo"></a>
+    <span class="toolbar-title">Phạm Như Quỳnh</span>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Chuyển chế độ sáng tối"><span class="theme-knob"></span></button>
+    <button class="floating-music-btn" id="musicBtn" type="button" aria-label="Bật hoặc tắt nhạc">♫</button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Mở menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="side-menu" id="sideMenu" aria-label="Menu món quà">
+    <div class="side-menu-head"><span>Món quà</span><button type="button" id="closeMenuBtn" aria-label="Đóng menu">×</button></div>
+    <a href="index.html">Thiệp mời</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+
+  <main class="mobile-page gift-page gift-page-v2">
+    <section class="gift-state gift-guard hidden" id="giftGuard">
+      <div class="gift-hero-card">
+        <img src="assets/photo12.jpg" alt="Ảnh của Như Quỳnh" class="gift-hero-photo">
+        <div class="gift-hero-shade"></div>
+        <div class="gift-hero-copy">
+          <p class="gift-kicker">Món quà riêng</p>
+          <h1>Món quà riêng</h1>
+        </div>
+      </div>
+      <div class="gift-content-card">
+        <p class="gift-script-name">Như Quỳnh</p>
+        <p class="gift-text">Trang này là một món quà riêng, chỉ mở qua khu vực Admin trong bản demo hiện tại.</p>
+        <div class="gift-actions">
+          <a href="admin.html" class="gift-primary-btn">Đăng nhập Admin</a>
+          <a href="index.html" class="gift-secondary-btn">Quay lại thiệp mời</a>
+        </div>
+        <p class="gift-note">Bản hiện tại vẫn dùng quyền truy cập demo bằng sessionStorage.</p>
+      </div>
     </section>
-    <section class="section gift-locked" id="giftLocked">
-      <p class="small-title">For Quỳnh</p><h1>Một món quà nhỏ</h1>
-      <p class="gift-text">Món quà này đang được giữ lại đến ngày thật đặc biệt. Khi thời gian đếm ngược kết thúc, Quỳnh sẽ mở được điều mình đã chuẩn bị.</p>
-      <div class="line-title time-title"><span></span><h2>Time</h2><span></span></div>
-      <div class="time-box"><span id="giftDays">00</span><b>:</b><span id="giftHours">00</span><b>:</b><span id="giftMinutes">00</span><b>:</b><span id="giftSeconds">00</span></div>
-      <p class="time-caption">Mở khóa vào 02.08.2026</p>
-      <a href="index.html" class="outline-btn">Quay lại lời mời</a>
+
+    <section class="gift-state gift-locked" id="giftLocked">
+      <div class="gift-hero-card">
+        <img src="assets/photo12.jpg" alt="Ảnh của Như Quỳnh" class="gift-hero-photo">
+        <div class="gift-hero-shade"></div>
+        <div class="gift-hero-copy">
+          <p class="gift-kicker">Dành cho Quỳnh</p>
+          <h1>Một món quà nhỏ</h1>
+        </div>
+      </div>
+      <div class="gift-content-card">
+        <p class="gift-script-name">Như Quỳnh</p>
+        <p class="gift-text">Món quà này đang được giữ lại đến ngày thật đặc biệt. Khi thời gian kết thúc, Quỳnh sẽ mở được điều mình đã chuẩn bị.</p>
+        <div class="gift-countdown-card" aria-label="Đếm ngược đến ngày mở quà">
+          <span id="giftDays">00</span><b>:</b><span id="giftHours">00</span><b>:</b><span id="giftMinutes">00</span><b>:</b><span id="giftSeconds">00</span>
+        </div>
+        <p class="gift-unlock-date">Mở khóa vào 02.08.2026</p>
+        <a href="index.html" class="gift-primary-btn">Quay lại thiệp mời</a>
+      </div>
     </section>
-    <section class="section gift-open hidden" id="giftOpen">
-      <p class="small-title">The gift is open</p><h1 class="signature dark">Gửi Quỳnh</h1>
-      <p class="gift-text">Đây là phần quà riêng sau này sẽ được viết tiếp: có thể là một lá thư, một video, một album kỷ niệm, hoặc một lời chúc thật đặc biệt.</p>
-      <div class="gift-card"><p>Chúc mừng Quỳnh đã đi đến một cột mốc thật đẹp. Mong rằng hành trình phía trước của bạn sẽ có thật nhiều bình an, may mắn và những điều đáng tự hào.</p></div>
-      <a href="index.html" class="outline-btn">Quay lại lời mời</a>
+
+    <section class="gift-state gift-open hidden" id="giftOpen">
+      <div class="gift-hero-card">
+        <img src="assets/photo12.jpg" alt="Ảnh của Như Quỳnh" class="gift-hero-photo">
+        <div class="gift-hero-shade"></div>
+        <div class="gift-hero-copy">
+          <p class="gift-kicker">Đã mở khóa</p>
+          <h1>Gửi Quỳnh</h1>
+        </div>
+      </div>
+      <div class="gift-content-card gift-letter-card">
+        <p class="gift-script-name">Như Quỳnh</p>
+        <p class="gift-text">Đây là phần quà riêng sau này sẽ được viết tiếp: có thể là một lá thư, một video, một album kỷ niệm, hoặc một lời chúc thật đặc biệt.</p>
+        <div class="gift-letter">
+          <p>Chúc mừng Quỳnh đã đi đến một cột mốc thật đẹp. Mong rằng hành trình phía trước của bạn sẽ có thật nhiều bình an, may mắn và những điều đáng tự hào.</p>
+        </div>
+        <a href="index.html" class="gift-primary-btn">Quay lại thiệp mời</a>
+      </div>
     </section>
   </main>
   <script src="script.js"></script>

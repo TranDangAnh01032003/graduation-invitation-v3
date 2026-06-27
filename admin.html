@@ -63,9 +63,12 @@
         <div><h1 class="admin-dashboard-name">Như Quỳnh</h1></div>
       </div>
       <div class="admin-mini-countdown" aria-label="Đếm ngược đến lễ tốt nghiệp">
-        <div class="admin-mini-time"><span id="adminDays">00</span><b>:</b><span id="adminHours">00</span><b>:</b><span id="adminMinutes">00</span><b>:</b><span id="adminSeconds">00</span></div>
         <a href="gift.html?from=admin" class="admin-gift-shortcut" aria-label="Mở món quà">
           <img src="assets/icons/gift.svg" alt="">
+        </a>
+        <div class="admin-mini-time"><span id="adminDays">00</span><b>:</b><span id="adminHours">00</span><b>:</b><span id="adminMinutes">00</span><b>:</b><span id="adminSeconds">00</span></div>
+        <a href="index.html" class="admin-invitation-shortcut" aria-label="Trở về trang thiệp mời">
+          <img src="assets/icons/back-to-invitation.svg" alt="">
         </a>
       </div>
       <div class="admin-workspace" id="adminWorkspace">
@@ -78,31 +81,33 @@
       <section class="admin-panel active" id="guestbookPanel">
         <div class="admin-guestbook-board" aria-label="Sổ lưu bút">
           <div class="guestbook-board-top">
+            <p>Lời nhắn từ bạn bè gửi tới Quỳnh</p>
+          </div>
+          <div class="guestbook-filter-toolbar">
             <button class="guestbook-icon-btn active" type="button" data-guest-filter="all" aria-label="Hiển thị tất cả lời chúc">
               <img src="assets/icons/messages.svg" alt="">
               <span class="guestbook-badge" id="statTotal">0</span>
             </button>
-            <p>Lời chúc từ bạn bè</p>
+            <div class="guestbook-filter-row" aria-label="Lọc lời nhắn theo trạng thái tham dự">
+              <button class="guestbook-icon-btn" type="button" data-guest-filter="Sẽ đến" aria-label="Hiển thị người sẽ đến">
+                <img src="assets/icons/attending.svg" alt="">
+                <span class="guestbook-badge" id="statYes">0</span>
+              </button>
+              <button class="guestbook-icon-btn" type="button" data-guest-filter="Chưa chắc" aria-label="Hiển thị người chưa chắc">
+                <img src="assets/icons/maybe.svg" alt="">
+                <span class="guestbook-badge" id="statMaybe">0</span>
+              </button>
+              <button class="guestbook-icon-btn" type="button" data-guest-filter="Không đến được" aria-label="Hiển thị người không đến được">
+                <img src="assets/icons/not-attending.svg" alt="">
+                <span class="guestbook-badge" id="statNo">0</span>
+              </button>
+            </div>
             <button class="guestbook-sort-btn" type="button" id="guestSortBtn" aria-label="Đổi thứ tự lời nhắn">
               <img src="assets/icons/sort.svg" alt="">
             </button>
           </div>
           <div class="guestbook-message-frame" id="adminGuestbookFrame" aria-live="polite">
             <div class="guestbook-message-list" id="guestList"></div>
-          </div>
-          <div class="guestbook-filter-row" aria-label="Lọc lời nhắn theo trạng thái tham dự">
-            <button class="guestbook-icon-btn" type="button" data-guest-filter="Sẽ đến" aria-label="Hiển thị người sẽ đến">
-              <img src="assets/icons/attending.svg" alt="">
-              <span class="guestbook-badge" id="statYes">0</span>
-            </button>
-            <button class="guestbook-icon-btn" type="button" data-guest-filter="Chưa chắc" aria-label="Hiển thị người chưa chắc">
-              <img src="assets/icons/maybe.svg" alt="">
-              <span class="guestbook-badge" id="statMaybe">0</span>
-            </button>
-            <button class="guestbook-icon-btn" type="button" data-guest-filter="Không đến được" aria-label="Hiển thị người không đến được">
-              <img src="assets/icons/not-attending.svg" alt="">
-              <span class="guestbook-badge" id="statNo">0</span>
-            </button>
           </div>
         </div>
       </section>
@@ -144,6 +149,9 @@
           <label>Địa chỉ<textarea id="settingAddress" rows="3" placeholder="Số 57 Phạm Hùng, Nam Từ Liêm, Hà Nội"></textarea></label>
           <div class="admin-update-actions">
             <button type="submit" class="submit-btn">Lưu thay đổi</button>
+            <a href="index.html" class="admin-update-back-btn" aria-label="Trở về trang thiệp mời">
+              <img src="assets/icons/back-to-invitation.svg" alt="">
+            </a>
           </div>
           <p class="admin-save-message" id="updateStatus" aria-live="polite"></p>
         </form>
