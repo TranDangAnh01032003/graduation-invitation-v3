@@ -10,16 +10,17 @@ Current project stage:
 - Static HTML/CSS/JS.
 - Supabase is configured for public guestbook inserts and authorized admin guestbook reads.
 - Admin login uses Supabase Google Auth plus `admin_users` permissions.
-- Private gift content is still guarded only by demo `sessionStorage` logic and must be protected before production gift release.
+- Gift page access now checks Supabase Auth plus `can_view_gift` / `can_preview_gift`.
+- Final private gift content should still be loaded from a protected source before production gift release.
 
 ## Current Source Files
 
 Core files:
 - `index.html` — public invitation page.
 - `admin.html` — admin login/dashboard page using Supabase Google Auth for guestbook reading.
-- `gift.html` — private gift page, currently guarded only by demo session logic.
+- `gift.html` — private gift page guarded by Supabase Auth/permission.
 - `config.js` — editable invitation text configuration.
-- `script.js` — UI behavior, countdown, menu, music, Supabase guestbook insert/read, admin auth, and demo gift guard.
+- `script.js` — UI behavior, countdown, menu, music, Supabase guestbook insert/read, admin auth, and gift permission checks.
 - `style.css` — all visual styling, including many accumulated override sections.
 
 Important:
@@ -90,13 +91,14 @@ Production rule:
 - `giftLocked`: countdown/locked state.
 - `giftOpen`: future placeholder for private gift content.
 
-Current demo access:
-- `gift.html?from=admin` sets session access in `sessionStorage`.
-- This is only demo logic and is not production security.
+Current access:
+- `gift.html` checks Supabase Auth session.
+- User must have `can_view_gift = true` or `can_preview_gift = true` in `admin_users`.
+- `gift.html?from=admin` and `sessionStorage` access are no longer used.
 
 Production rule:
-- Gift content must not be exposed to unauthorized users.
-- Final gift access should require a valid authenticated user and role/permission.
+- Final gift content must not be exposed to unauthorized users.
+- Final gift content should be fetched only after a valid authenticated user passes permission checks.
 - Quỳnh should have permission to view the final gift.
 - The site creator/admin may have permission to preview/manage only if explicitly allowed.
 

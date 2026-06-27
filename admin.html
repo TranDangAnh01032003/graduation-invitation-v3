@@ -28,7 +28,7 @@
     <div class="side-menu-head"><span>Admin Menu</span><button type="button" id="closeMenuBtn" aria-label="Đóng menu">×</button></div>
     <a href="index.html">Thiệp mời</a>
     <a href="#dashboardBox" data-menu-link>Bảng điều khiển</a>
-    <a href="gift.html?from=admin">Món quà</a>
+    <a href="gift.html">Món quà</a>
     <a href="#loginBox" data-menu-link onclick="adminLogout()">Đăng xuất</a>
   </nav>
   <div class="menu-backdrop" id="menuBackdrop"></div>
@@ -56,7 +56,7 @@
         <div><h1 class="admin-dashboard-name">Như Quỳnh</h1></div>
       </div>
       <div class="admin-mini-countdown" aria-label="Đếm ngược đến lễ tốt nghiệp">
-        <a href="gift.html?from=admin" class="admin-gift-shortcut" aria-label="Mở món quà">
+        <a href="gift.html" class="admin-gift-shortcut" aria-label="Mở món quà">
           <img src="assets/icons/gift.svg" alt="">
         </a>
         <div class="admin-mini-time"><span id="adminDays">00</span><b>:</b><span id="adminHours">00</span><b>:</b><span id="adminMinutes">00</span><b>:</b><span id="adminSeconds">00</span></div>
@@ -140,6 +140,12 @@
           </div>
           <label>Hội trường<input type="text" id="settingHall" placeholder="Hội trường MMH"></label>
           <label>Địa chỉ<textarea id="settingAddress" rows="3" placeholder="Số 57 Phạm Hùng, Nam Từ Liêm, Hà Nội"></textarea></label>
+          <div class="admin-gift-unlock-settings hidden" id="giftUnlockSettings">
+            <div class="admin-update-grid two">
+              <label>Ngày mở quà<input type="date" id="giftUnlockDateInput"></label>
+              <label>Giờ mở quà<input type="time" id="giftUnlockTimeInput"></label>
+            </div>
+          </div>
           <div class="admin-update-actions">
             <button type="submit" class="submit-btn">Lưu thay đổi</button>
             <a href="index.html" class="admin-update-back-btn" aria-label="Trở về trang thiệp mời">

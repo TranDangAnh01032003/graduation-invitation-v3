@@ -12,11 +12,11 @@ Current working parts:
 - event information
 - guestbook form inserting into Supabase with localStorage fallback
 - admin dashboard using Supabase Google Auth and RLS-protected guestbook reads
-- gift page using sessionStorage demo guard
+- gift page using Supabase Auth and gift permission flags
 - countdown
 
 Main risk:
-- Gift access is still demo-only and not production-safe.
+- Final private gift content should still be loaded from a protected source before production gift release.
 
 ## Phase 0 — Preserve Current Direction
 
@@ -160,22 +160,22 @@ Definition of done:
 
 ## Phase 6 — Protect Gift Page
 
-Status: Planned
+Status: In progress
 
 Goal:
-- Replace `gift.html?from=admin` and `sessionStorage` with real permission checks.
+- Protect `gift.html` with real Supabase Auth and permission checks.
 
 Tasks:
 - [ ] Decide who can view final gift:
   - Quỳnh only
   - or Quỳnh + creator/admin preview
-- [ ] Check auth session on `gift.html`.
-- [ ] Check permission:
+- [x] Check auth session on `gift.html`.
+- [x] Check permission:
   - `can_view_gift`
   - or `can_preview_gift`
-- [ ] Keep countdown/locked state.
+- [x] Keep countdown/locked state.
 - [ ] Load private gift content only after permission check.
-- [ ] Remove URL parameter access as production authorization.
+- [x] Remove URL parameter access as production authorization.
 - [ ] Do not expose private assets publicly if they must remain secret.
 
 Definition of done:

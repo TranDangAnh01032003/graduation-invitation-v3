@@ -7,9 +7,10 @@ The public invitation can be visible to everyone, but guestbook reading, admin d
 Current state:
 - Public guestbook insert uses Supabase `guestbook_entries`.
 - Admin guestbook reading uses Supabase Google Auth and `admin_users` permissions.
+- Gift page access uses Supabase Google Auth and `can_view_gift` / `can_preview_gift`.
 - `localStorage` remains only as a fallback/demo path when Supabase is unavailable.
-- `sessionStorage` is still not authorization.
-- `gift.html?from=admin` is only a local/demo convenience and must be replaced before private gift release.
+- `sessionStorage` is no longer used as gift authorization.
+- Final private gift content should not be committed directly in public HTML/assets if it must remain secret.
 
 ## Threat Model
 
@@ -299,8 +300,8 @@ Phase 3:
 - Use RLS to protect reads.
 
 Phase 4:
-- Protect gift content by auth + permission.
-- Remove `gift.html?from=admin` as access control.
+- Protect gift page access by auth + permission.
+- Move final private gift content to a protected source before release.
 
 Phase 5:
 - Deploy and test production access rules.

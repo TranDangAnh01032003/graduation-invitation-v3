@@ -56,7 +56,7 @@ The current version is partially connected to Supabase:
 - public guestbook submissions insert into `guestbook_entries`
 - admin login uses Supabase Google Auth
 - authorized admin/owner users can read guestbook entries through RLS
-- private gift access is still demo-only through URL parameter and `sessionStorage`
+- gift page access checks Supabase Auth and `can_view_gift` / `can_preview_gift`
 
 ## Public User Flow
 
@@ -99,15 +99,16 @@ Current admin page:
 
 ## Private Gift Flow
 
-Current demo:
-- direct access to `gift.html` shows a guard message.
-- `gift.html?from=admin` grants demo access through `sessionStorage`.
-- before unlock date, shows locked countdown.
-- after countdown reaches zero, shows placeholder gift content.
+Current gift flow:
+- direct access to `gift.html` checks Supabase Auth.
+- unauthenticated users see a guard with Google Login.
+- authenticated users need `can_view_gift` or `can_preview_gift`.
+- before unlock date, authorized users see the locked countdown.
+- after countdown reaches zero, authorized users see placeholder gift content.
 
 Production target:
-- gift access must require real auth and permission.
-- gift content must not be exposed to unauthorized public visitors.
+- gift access now requires real auth and permission.
+- final private gift content must not be exposed in static HTML or public assets.
 - Quỳnh should be able to view the real gift.
 - Admin preview may exist only if intentionally allowed.
 
