@@ -13,6 +13,7 @@ Current working parts:
 - guestbook form inserting into Supabase with localStorage fallback
 - admin dashboard using Supabase Google Auth and RLS-protected guestbook reads
 - gift page using Supabase Auth and gift permission flags
+- central `site_settings` table for profile, event, page text, and gift unlock settings
 - countdown
 
 Main risk:
@@ -104,6 +105,7 @@ Tasks:
 - [x] Add authorized redirect URLs.
 - [x] Create `guestbook_entries` table.
 - [x] Create `admin_users` table.
+- [x] Create `site_settings` table.
 - [x] Enable RLS.
 - [x] Add policies from `SECURITY_PLAN.md`.
 - [ ] Add Quỳnh as `owner`.

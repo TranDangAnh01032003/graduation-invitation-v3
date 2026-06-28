@@ -25,7 +25,10 @@
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Mở menu"><span></span><span></span><span></span></button>
   </header>
   <nav class="side-menu" id="sideMenu" aria-label="Menu admin">
-    <div class="side-menu-head"><span>Admin Menu</span><button type="button" id="closeMenuBtn" aria-label="Đóng menu">×</button></div>
+    <div class="side-menu-head">
+      <span class="admin-menu-user" id="adminMenuUser"><span class="admin-menu-user-icon" aria-hidden="true"></span><span id="adminMenuUserName">Admin</span></span>
+      <button type="button" id="closeMenuBtn" aria-label="Đóng menu">×</button>
+    </div>
     <a href="index.html">Thiệp mời</a>
     <a href="#dashboardBox" data-menu-link>Bảng điều khiển</a>
     <a href="gift.html">Món quà</a>
@@ -129,10 +132,10 @@
           </div>
         </div>
         <form class="admin-update-form" id="invitationUpdateForm">
-          <div class="admin-update-grid">
-            <label>Ngày<input type="text" id="settingDay" inputmode="numeric" maxlength="2" placeholder="02"></label>
-            <label>Tháng<input type="text" id="settingMonth" placeholder="August"></label>
-            <label>Năm<input type="text" id="settingYear" inputmode="numeric" maxlength="4" placeholder="2026"></label>
+          <div class="admin-update-grid admin-date-select-grid">
+            <label>Năm<select id="settingYear" aria-label="Chọn năm"></select></label>
+            <label>Tháng<select id="settingMonth" aria-label="Chọn tháng"></select></label>
+            <label>Ngày<select id="settingDay" aria-label="Chọn ngày"></select></label>
           </div>
           <div class="admin-update-grid two">
             <label>Giờ bắt đầu<input type="time" id="settingStartTime"></label>
