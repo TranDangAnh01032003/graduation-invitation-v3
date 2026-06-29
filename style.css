@@ -9253,6 +9253,13 @@ body.dark-mode.admin-dashboard-open .hidden-guestbook-toggle:focus-visible {
 }
 
 /* Admin guestbook moderation: reveal hide action only after long press */
+body.admin-dashboard-open .guestbook-message-list > .admin-guest-message,
+body.admin-dashboard-open .guestbook-message-list > .admin-guest-message * {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
 body.admin-dashboard-open .guestbook-message-list > .admin-guest-message .guest-visibility-btn {
   width: 0;
   min-width: 0;
