@@ -1398,7 +1398,7 @@ body {
 
 .outline-btn::before {
   margin-right: 5px;
-  content: "âŒ–";
+  content: "\2316";
 }
 
 .location-section .outline-btn::before {
@@ -3005,7 +3005,7 @@ body.dark-mode .event-side strong {
   }
 }
 
-/* Match the event info typography to the "QUAN TRá»ŒNG" label */
+/* Match the event info typography to the "QUAN TRONG" label */
 .event-info-section,
 .event-info-section strong,
 .event-info-section span,
@@ -5129,14 +5129,14 @@ html.dark-mode body.admin-dashboard-open .admin-dashboard-cover {
 }
 
 .admin-swipe-hint::before {
-  content: "âŸµ";
+  content: "\27F5";
   margin-right: 10px;
   font-size: 22px;
   vertical-align: -2px;
 }
 
 .admin-swipe-hint::after {
-  content: "âŸ¶";
+  content: "\27F6";
   margin-left: 10px;
   font-size: 22px;
   vertical-align: -2px;
@@ -9311,4 +9311,216 @@ body.admin-dashboard-open .hidden-guestbook-panel .guest-visibility-btn {
 html.dark-mode body.admin-dashboard-open .guestbook-message-list > .admin-guest-message.moderation-ready::before,
 body.dark-mode.admin-dashboard-open .guestbook-message-list > .admin-guest-message.moderation-ready::before {
   background: rgba(0, 0, 0, .16);
+}
+
+/* Gift gate: minimal protected entry and blank future gift page */
+body.gift-gate-body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .84)),
+    url("assets/bg-silk.jpg") center center / cover fixed;
+  color: #2f333a;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+html.dark-mode body.gift-gate-body,
+body.gift-gate-body.dark-mode {
+  background:
+    linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .28)),
+    url("assets/black-bg-silk.jpg") center center / cover fixed;
+  color: rgba(255, 250, 246, .92);
+}
+
+.gift-gate-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px 18px;
+}
+
+.gift-gate-card {
+  width: min(330px, 100%);
+  padding: 28px 18px 22px;
+  border: 1px solid rgba(43, 45, 49, .08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .74);
+  box-shadow: 0 24px 58px rgba(43, 45, 49, .12);
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.gift-gate-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+  display: block;
+  filter: drop-shadow(0 5px 10px rgba(43, 45, 49, .12));
+}
+
+.gift-gate-kicker {
+  margin: 0 0 8px;
+  font-family: "Roboto Condensed", "Oswald", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(43, 45, 49, .56);
+}
+
+.gift-gate-card .gift-script-name {
+  margin: 0 auto 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(43, 45, 49, .1);
+  font-family: "Great Vibes", cursive;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.05;
+  color: #30343a;
+}
+
+.gift-gate-text {
+  margin: 0 auto 18px;
+  max-width: 270px;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.8;
+  color: rgba(43, 45, 49, .72);
+}
+
+.gift-gate-countdown {
+  min-height: 48px;
+  margin: 0 auto 16px;
+  padding: 0 18px;
+  border: 1px solid rgba(43, 45, 49, .18);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: "Roboto Condensed", "Oswald", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  color: #2f333a;
+  background: rgba(255, 255, 255, .38);
+}
+
+.gift-gate-countdown b {
+  font-weight: 400;
+  opacity: .7;
+}
+
+.gift-open-link,
+.gift-gate-actions a {
+  min-height: 38px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: "Roboto Condensed", "Oswald", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.gift-open-link {
+  width: 100%;
+  margin: 0 0 12px;
+  background: #282c34;
+  color: #fff;
+  box-shadow: 0 14px 26px rgba(43, 45, 49, .18);
+}
+
+.gift-gate-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.gift-gate-actions a {
+  border: 1px solid rgba(43, 45, 49, .14);
+  color: #2f333a;
+  background: rgba(255, 255, 255, .44);
+}
+
+.gift-for-quynh-content {
+  margin: 2px 0 18px;
+  padding: 22px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(43, 45, 49, .09);
+  background: rgba(255, 255, 255, .36);
+}
+
+.gift-for-quynh-content p {
+  margin: 0 0 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.gift-for-quynh-content span {
+  font-size: 12px;
+  color: rgba(43, 45, 49, .62);
+}
+
+html.dark-mode .gift-gate-card,
+body.gift-gate-body.dark-mode .gift-gate-card {
+  border-color: rgba(255, 255, 255, .12);
+  background: rgba(31, 33, 38, .74);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .34);
+}
+
+html.dark-mode .gift-gate-kicker,
+body.gift-gate-body.dark-mode .gift-gate-kicker {
+  color: rgba(255, 250, 246, .58);
+}
+
+html.dark-mode .gift-gate-card .gift-script-name,
+body.gift-gate-body.dark-mode .gift-gate-card .gift-script-name {
+  border-bottom-color: rgba(255, 255, 255, .11);
+  color: rgba(255, 250, 246, .94);
+}
+
+html.dark-mode .gift-gate-text,
+body.gift-gate-body.dark-mode .gift-gate-text,
+html.dark-mode .gift-for-quynh-content span,
+body.gift-gate-body.dark-mode .gift-for-quynh-content span {
+  color: rgba(255, 250, 246, .72);
+}
+
+html.dark-mode .gift-gate-countdown,
+body.gift-gate-body.dark-mode .gift-gate-countdown,
+html.dark-mode .gift-gate-actions a,
+body.gift-gate-body.dark-mode .gift-gate-actions a,
+html.dark-mode .gift-for-quynh-content,
+body.gift-gate-body.dark-mode .gift-for-quynh-content {
+  border-color: rgba(255, 255, 255, .16);
+  background: rgba(255, 255, 255, .07);
+  color: rgba(255, 250, 246, .92);
+}
+
+html.dark-mode .gift-open-link,
+body.gift-gate-body.dark-mode .gift-open-link {
+  background: rgba(255, 250, 246, .9);
+  color: #23262d;
+}
+
+@media (max-width: 360px) {
+  .gift-gate-card {
+    padding: 24px 14px 18px;
+  }
+
+  .gift-gate-countdown {
+    gap: 8px;
+    padding: 0 14px;
+    font-size: 22px;
+  }
+
+  .gift-gate-actions {
+    grid-template-columns: 1fr;
+  }
 }

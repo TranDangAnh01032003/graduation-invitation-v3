@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Món quà dành cho Quỳnh</title>
-  <meta name="description" content="Cổng mở món quà riêng dành cho Phạm Như Quỳnh." />
+  <title>GiftForQuynh</title>
+  <meta name="description" content="Nội dung món quà riêng dành cho Phạm Như Quỳnh." />
   <link rel="icon" href="assets/ueb-logo-transparent.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,16 +16,19 @@
     }
   </script>
 </head>
-<body data-page="gift" class="gift-gate-body">
+<body data-page="gift-for-quynh" class="gift-gate-body">
   <main class="gift-gate-shell">
-    <section class="gift-gate-card" aria-live="polite">
-      <p class="gift-gate-text" id="giftGateMessage">
-        Chúc mừng tốt nghiệp Như Quỳnh
-      </p>
-      <div class="gift-gate-countdown" aria-label="Đếm ngược đến thời điểm mở quà">
-        <span id="giftDays">00</span><b>:</b><span id="giftHours">00</span><b>:</b><span id="giftMinutes">00</span><b>:</b><span id="giftSeconds">00</span>
+    <section class="gift-gate-card gift-for-quynh-card" aria-live="polite">
+      <img src="assets/ueb-logo-transparent.png" alt="UEB" class="gift-gate-logo">
+      <p class="gift-gate-kicker" id="giftForQuynhStatus">Đang kiểm tra quyền truy cập</p>
+      <h1 class="gift-script-name">Như Quỳnh</h1>
+      <div id="giftForQuynhContent" class="gift-for-quynh-content hidden">
+        <p>GiftForQuynh</p>
+        <span>Nội dung món quà sẽ được đặt ở đây.</span>
       </div>
-      <a href="gift-for-quynh.html" class="gift-open-link hidden" id="giftForQuynhLink">Mở món quà</a>
+      <p id="giftForQuynhDenied" class="gift-gate-text">
+        Trang này chỉ hiển thị khi tài khoản có đủ quyền và món quà đã đến thời điểm được mở.
+      </p>
       <div class="gift-gate-actions">
         <a href="index.html">Quay lại thiệp mời</a>
         <a href="admin.html">Về trang admin</a>
