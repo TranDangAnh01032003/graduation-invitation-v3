@@ -9524,3 +9524,246 @@ body.gift-gate-body.dark-mode .gift-open-link {
     grid-template-columns: 1fr;
   }
 }
+
+/* Index motion polish: subtle invitation-style reveal effects */
+body[data-page="index"] .hero-section {
+  animation: indexHeroSettle 900ms cubic-bezier(.2, .8, .2, 1) both;
+}
+
+body[data-page="index"] .hero-img {
+  animation: indexHeroImageIn 1200ms cubic-bezier(.2, .8, .2, 1) both;
+  transform-origin: center;
+}
+
+body[data-page="index"] .hero-ceremony-img {
+  animation: indexSoftRise 900ms 180ms cubic-bezier(.2, .8, .2, 1) both;
+}
+
+body[data-page="index"] .date-text {
+  animation: indexSoftRise 760ms 300ms cubic-bezier(.2, .8, .2, 1) both;
+}
+
+body[data-page="index"] .hero-name-section {
+  animation: indexNameFloat 900ms 260ms cubic-bezier(.2, .8, .2, 1) both;
+}
+
+body[data-page="index"].index-reveal-ready .reveal-item {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  transition:
+    opacity 560ms cubic-bezier(.2, .8, .2, 1),
+    transform 560ms cubic-bezier(.2, .8, .2, 1);
+}
+
+body[data-page="index"].index-reveal-ready .reveal-item.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+body[data-page="index"].index-reveal-ready .event-info-section .event-side,
+body[data-page="index"].index-reveal-ready .event-info-section .event-date-core,
+body[data-page="index"].index-reveal-ready .event-info-section .event-location-block,
+body[data-page="index"].index-reveal-ready .guestbook-section .guestbook-hero,
+body[data-page="index"].index-reveal-ready .guestbook-section .guest-form,
+body[data-page="index"].index-reveal-ready .countdown-section .time-title,
+body[data-page="index"].index-reveal-ready .countdown-section .time-box,
+body[data-page="index"].index-reveal-ready .thank-section img,
+body[data-page="index"].index-reveal-ready .thank-section .thank-overlay h2 {
+  opacity: 0;
+  transform: translate3d(0, 8px, 0);
+  transition:
+    opacity 520ms cubic-bezier(.2, .8, .2, 1),
+    transform 520ms cubic-bezier(.2, .8, .2, 1);
+}
+
+body[data-page="index"].index-reveal-ready .event-info-section.is-visible .event-date-core,
+body[data-page="index"].index-reveal-ready .event-info-section.is-visible .event-side,
+body[data-page="index"].index-reveal-ready .event-info-section.is-visible .event-location-block,
+body[data-page="index"].index-reveal-ready .guestbook-section.is-visible .guestbook-hero,
+body[data-page="index"].index-reveal-ready .guestbook-section.is-visible .guest-form,
+body[data-page="index"].index-reveal-ready .countdown-section.is-visible .time-title,
+body[data-page="index"].index-reveal-ready .countdown-section.is-visible .time-box,
+body[data-page="index"].index-reveal-ready .thank-section.is-visible img,
+body[data-page="index"].index-reveal-ready .thank-section.is-visible .thank-overlay h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body[data-page="index"].index-reveal-ready .event-info-section .event-weekday {
+  transition-delay: 80ms;
+}
+
+body[data-page="index"].index-reveal-ready .event-info-section .event-date-core {
+  transition-delay: 150ms;
+}
+
+body[data-page="index"].index-reveal-ready .event-info-section .event-hour {
+  transition-delay: 220ms;
+}
+
+body[data-page="index"].index-reveal-ready .event-info-section .event-location-block,
+body[data-page="index"].index-reveal-ready .guestbook-section .guest-form,
+body[data-page="index"].index-reveal-ready .countdown-section .time-box,
+body[data-page="index"].index-reveal-ready .thank-section .thank-overlay h2 {
+  transition-delay: 260ms;
+}
+
+body[data-page="index"] .outline-btn,
+body[data-page="index"] .submit-btn,
+body[data-page="index"] .guest-form input,
+body[data-page="index"] .guest-form textarea,
+body[data-page="index"] .guest-form select,
+body[data-page="index"] .time-box {
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease,
+    color 220ms ease,
+    opacity 220ms ease,
+    transform 180ms ease;
+}
+
+body[data-page="index"] .outline-btn:hover,
+body[data-page="index"] .outline-btn:focus-visible,
+body[data-page="index"] .submit-btn:hover,
+body[data-page="index"] .submit-btn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(34, 37, 43, .12);
+}
+
+body[data-page="index"] .outline-btn:active,
+body[data-page="index"] .submit-btn:active {
+  transform: translateY(0) scale(.985);
+}
+
+body[data-page="index"] .guest-form input:focus,
+body[data-page="index"] .guest-form textarea:focus,
+body[data-page="index"] .guest-form select:focus {
+  border-color: rgba(35, 38, 44, .72);
+  box-shadow: 0 0 0 3px rgba(201, 131, 124, .12);
+  outline: none;
+}
+
+body[data-page="index"] .time-box {
+  position: relative;
+  overflow: hidden;
+}
+
+body[data-page="index"] .time-box::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 15%, rgba(255, 255, 255, .32), transparent 55%);
+  opacity: 0;
+  transform: translateX(-60%);
+}
+
+body[data-page="index"] .countdown-section.is-visible .time-box::after {
+  animation: indexTimeSheen 1350ms 360ms ease-out both;
+}
+
+@keyframes indexHeroSettle {
+  from {
+    opacity: .96;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes indexHeroImageIn {
+  from {
+    opacity: .88;
+    transform: scale(1.025);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes indexSoftRise {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes indexNameFloat {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes indexTimeSheen {
+  0% {
+    opacity: 0;
+    transform: translateX(-65%);
+  }
+  28% {
+    opacity: .65;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(70%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+body[data-page="index"] .hero-section,
+  body[data-page="index"] .hero-img,
+  body[data-page="index"] .hero-ceremony-img,
+  body[data-page="index"] .date-text,
+  body[data-page="index"] .hero-name-section,
+  body[data-page="index"].index-reveal-ready .reveal-item,
+  body[data-page="index"].index-reveal-ready .event-info-section .event-side,
+  body[data-page="index"].index-reveal-ready .event-info-section .event-date-core,
+  body[data-page="index"].index-reveal-ready .event-info-section .event-location-block,
+  body[data-page="index"].index-reveal-ready .guestbook-section .guestbook-hero,
+  body[data-page="index"].index-reveal-ready .guestbook-section .guest-form,
+  body[data-page="index"].index-reveal-ready .countdown-section .time-title,
+  body[data-page="index"].index-reveal-ready .countdown-section .time-box,
+  body[data-page="index"].index-reveal-ready .thank-section img,
+  body[data-page="index"].index-reveal-ready .thank-section .thank-overlay h2,
+  body[data-page="index"] .countdown-section.is-visible .time-box::after {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  body[data-page="index"] .countdown-section.is-visible .time-box::after {
+    opacity: 0;
+  }
+}
+
+/* Index motion performance pass: keep scroll reveal light on mobile */
+body[data-page="index"].index-reveal-ready .event-info-section .event-side,
+body[data-page="index"].index-reveal-ready .event-info-section .event-date-core,
+body[data-page="index"].index-reveal-ready .event-info-section .event-location-block,
+body[data-page="index"].index-reveal-ready .guestbook-section .guestbook-hero,
+body[data-page="index"].index-reveal-ready .guestbook-section .guest-form,
+body[data-page="index"].index-reveal-ready .countdown-section .time-title,
+body[data-page="index"].index-reveal-ready .countdown-section .time-box,
+body[data-page="index"].index-reveal-ready .thank-section img,
+body[data-page="index"].index-reveal-ready .thank-section .thank-overlay h2 {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+body[data-page="index"] .countdown-section.is-visible .time-box::after {
+  animation: none;
+  opacity: 0;
+}

@@ -138,20 +138,15 @@ Those older ideas may exist in CSS/config history, but they are not part of the 
 
 Current configurable text includes:
 - quote
-- introMessage
-- inviteLine
-- dateNote
 - school
 - hall
 - address
-- timelineNote
-- albumTextA
-- albumTextB
 - formThanks
 
 Note:
-- Some keys may be leftovers from previous versions and may not be used in the current `index.html`.
-- Do not remove config keys unless doing a deliberate cleanup.
+- These five keys are all referenced by the current HTML/JS.
+- Older keys from removed layouts, such as album and timeline copy, have been cleaned out.
+- Supabase `site_settings` can override event/profile/page text at runtime.
 
 ## Design Intent
 

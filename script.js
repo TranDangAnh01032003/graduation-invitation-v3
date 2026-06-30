@@ -13,6 +13,9 @@ async function setupGiftGuard(){if(document.body.dataset.page!=="gift")return;sh
 async function giftLogin(){const client=getSupabaseClient();if(!client){alert("Supabase chưa được cấu hình nên chưa thể đăng nhập.");return}const{error}=await client.auth.signInWithOAuth({provider:"google",options:{redirectTo:`${window.location.origin}${window.location.pathname}`}});if(error)alert(`Chưa đăng nhập được: ${error.message}`)}
 async function giftLogout(){const client=getSupabaseClient();if(client)await client.auth.signOut();giftAuthState.checked=true;giftAuthState.canAccess=false;giftAuthState.permission=null;setupGiftGuard()}
 setupGiftGuard();
+
+function setupIndexRevealEffects(){if(document.body.dataset.page!=="index")return;const items=[...document.querySelectorAll(".reveal-item")];if(!items.length)return;document.body.classList.add("index-reveal-ready");if(!("IntersectionObserver"in window)){items.forEach(item=>item.classList.add("is-visible"));return}const revealObserver=new IntersectionObserver((entries,observer)=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add("is-visible");observer.unobserve(entry.target)})},{root:null,threshold:.16,rootMargin:"0px 0px -8% 0px"});items.forEach(item=>revealObserver.observe(item))}
+setupIndexRevealEffects();
 let graduationDate=new Date(CONFIG.graduationDate).getTime();
 const giftUnlockSettingsKey="pham-nhu-quynh-gift-unlock-settings";
 function localDateTimeParts(value){if(!value)return{date:"",time:""};const date=new Date(value);if(Number.isNaN(date.getTime()))return{date:"",time:""};const pad=n=>String(n).padStart(2,"0");return{date:`${date.getFullYear()}-${pad(date.getMonth()+1)}-${pad(date.getDate())}`,time:`${pad(date.getHours())}:${pad(date.getMinutes())}`}}
