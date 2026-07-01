@@ -6304,10 +6304,23 @@ body.admin-dashboard-open .dashboard {
   height: 48px;
 }
 
-/* Silk background: use the current JPG asset and keep invitation sections transparent */
+/* Silk background: prefer optimized WebP, keep JPG fallback for older browsers */
 :root {
   --silk-background-image: url("assets/bg-silk.jpg");
   --dark-silk-background-image: url("assets/black-bg-silk.jpg");
+}
+
+@supports (background-image: image-set(url("assets/bg-silk.webp") type("image/webp"))) {
+  :root {
+    --silk-background-image: image-set(
+      url("assets/bg-silk.webp") type("image/webp"),
+      url("assets/bg-silk.jpg") type("image/jpeg")
+    );
+    --dark-silk-background-image: image-set(
+      url("assets/black-bg-silk.webp") type("image/webp"),
+      url("assets/black-bg-silk.jpg") type("image/jpeg")
+    );
+  }
 }
 
 body:not(.dark-mode) .mobile-page,
@@ -9319,7 +9332,7 @@ body.gift-gate-body {
   margin: 0;
   background:
     linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .84)),
-    url("assets/bg-silk.jpg") center center / cover fixed;
+    var(--silk-background-image) center center / cover scroll;
   color: #2f333a;
   font-family: "Be Vietnam Pro", sans-serif;
 }
@@ -9328,7 +9341,7 @@ html.dark-mode body.gift-gate-body,
 body.gift-gate-body.dark-mode {
   background:
     linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .28)),
-    url("assets/black-bg-silk.jpg") center center / cover fixed;
+    var(--dark-silk-background-image) center center / cover scroll;
   color: rgba(255, 250, 246, .92);
 }
 
