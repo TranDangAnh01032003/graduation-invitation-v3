@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phạm Như Quỳnh</title>
   <meta name="description" content="Thư mời dự lễ tốt nghiệp của Phạm Như Quỳnh" />
-  <link rel="icon" href="assets/ueb-logo-transparent.png" type="image/png" />
+  <link rel="icon" href="assets/ueb-logo-transparent.webp" type="image/webp" />
   <link rel="preload" as="image" href="assets/bg-silk.webp" type="image/webp" />
   <link rel="stylesheet" href="style.css" />
   <style>
@@ -106,7 +106,7 @@
 <body data-page="index">
   <audio id="bgMusic" loop preload="none"><source src="assets/music.mp3" type="audio/mpeg"></audio>
   <header class="topbar">
-    <a href="#home" class="home-cap" aria-label="Về đầu trang"><img src="assets/ueb-logo-transparent.png" alt="UEB" class="home-logo"></a>
+    <a href="#home" class="home-cap" aria-label="Về đầu trang"><img src="assets/ueb-logo-transparent.webp" alt="UEB" class="home-logo"></a>
     <span class="toolbar-title">Phạm Như Quỳnh</span>
     <button class="theme-btn" id="themeBtn" type="button" aria-label="Chuyển chế độ sáng tối"><span class="theme-knob"></span></button>
     <button class="floating-music-btn" id="musicBtn" type="button" aria-label="Bật hoặc tắt nhạc">♫</button>
@@ -123,7 +123,7 @@
   <div class="menu-backdrop" id="menuBackdrop"></div>
   <main class="mobile-page">
     <section class="hero-section" id="home">
-      <img src="assets/photo1.jpg" alt="Ảnh tốt nghiệp của Phạm Như Quỳnh" class="hero-img">
+      <img alt="Ảnh tốt nghiệp của Phạm Như Quỳnh" class="hero-img" data-invitation-media="hero_image" data-fallback-src="assets/photo1.jpg">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <img src="assets/graduation-ceremony-text-crop.png" alt="Graduation Ceremony" class="hero-ceremony-img">
@@ -164,7 +164,7 @@
     </section>
 
     <section class="section guestbook-section reveal-item" id="guestbook">
-      <div class="guestbook-hero"><img src="assets/photo11.jpg" alt="Sổ lưu bút"><div class="dark-card"><p class="script-white">Sổ lưu bút</p></div></div>
+      <div class="guestbook-hero"><img alt="Sổ lưu bút" data-invitation-media="guestbook_image" data-fallback-src="assets/photo11.jpg"><div class="dark-card"><p class="script-white">Sổ lưu bút</p></div></div>
       <form class="guest-form" id="guestForm">
         <input type="text" id="guestWebsite" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
         <input type="text" id="guestName" placeholder="Tên của bạn" required>
@@ -180,7 +180,7 @@
       <div class="time-box"><span id="days">00</span><b>:</b><span id="hours">00</span><b>:</b><span id="minutes">00</span><b>:</b><span id="seconds">00</span></div>
     </section>
 
-    <section class="thank-section reveal-item"><img src="assets/photo12.jpg" alt="Thank you"><div class="thank-overlay"><h2>Thank you!</h2></div></section>
+    <section class="thank-section reveal-item"><img alt="Thank you" data-invitation-media="thank_image" data-fallback-src="assets/photo12.jpg"><div class="thank-overlay"><h2>Thank you!</h2></div></section>
     <div class="bottom-space"></div>
   </main>
   <script src="config.js"></script>

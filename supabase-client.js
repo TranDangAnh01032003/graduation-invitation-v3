@@ -12,6 +12,7 @@
 
   window.GRADUATION_SUPABASE = {
     url: SUPABASE_URL,
+    anonKey: SUPABASE_ANON_KEY,
     isConfigured: hasValidConfig,
     client: hasValidConfig
       ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)

@@ -9780,3 +9780,318 @@ body[data-page="index"] .countdown-section.is-visible .time-box::after {
   animation: none;
   opacity: 0;
 }
+
+/* Admin media upload: Supabase image processing */
+.admin-media-settings {
+  display: grid;
+  gap: 10px;
+  margin-top: 4px;
+  padding: 14px;
+  border: 1px solid rgba(47, 50, 56, .14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .42);
+}
+
+.admin-media-head {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 2px;
+}
+
+.admin-media-head h3 {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+  color: #2f3339;
+}
+
+.admin-media-head p,
+.admin-media-status {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(47, 51, 57, .62);
+}
+
+.admin-media-picker {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  gap: 7px !important;
+  margin: 0 !important;
+}
+
+.admin-media-picker span {
+  font-family: "Oswald", sans-serif;
+  font-size: 11px;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+  color: rgba(47, 51, 57, .82);
+}
+
+.admin-media-picker input[type="file"] {
+  min-height: 38px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.admin-media-picker input[type="file"]::file-selector-button {
+  margin-right: 10px;
+  border: 0;
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: #252932;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 10px;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+.admin-media-status.show {
+  color: #2f3339;
+}
+
+.admin-media-status.error {
+  color: #b8655c;
+}
+
+html.dark-mode .admin-media-settings,
+body.dark-mode .admin-media-settings {
+  border-color: rgba(255, 255, 255, .15);
+  background: rgba(255, 255, 255, .07);
+}
+
+html.dark-mode .admin-media-head h3,
+html.dark-mode .admin-media-picker span,
+html.dark-mode .admin-media-status.show,
+body.dark-mode .admin-media-head h3,
+body.dark-mode .admin-media-picker span,
+body.dark-mode .admin-media-status.show {
+  color: rgba(255, 255, 255, .9);
+}
+
+html.dark-mode .admin-media-head p,
+body.dark-mode .admin-media-head p {
+  color: rgba(255, 255, 255, .58);
+}
+
+html.dark-mode .admin-media-picker input[type="file"]::file-selector-button,
+body.dark-mode .admin-media-picker input[type="file"]::file-selector-button {
+  background: rgba(255, 255, 255, .9);
+  color: #202329;
+}
+
+/* Admin media upload: preview cards before saving */
+.admin-update-form .admin-media-settings {
+  gap: 14px;
+  padding: 16px 12px 14px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .5);
+}
+
+.admin-update-form .admin-media-head {
+  justify-items: center;
+  margin: 0;
+}
+
+.admin-update-form .admin-media-head h3 {
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.admin-update-form .admin-media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 12px;
+}
+
+.admin-update-form .admin-media-picker {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px !important;
+  min-width: 0;
+  text-align: center;
+}
+
+.admin-update-form .admin-media-picker p {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #34373d;
+}
+
+.admin-update-form .admin-media-preview {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 86px;
+  aspect-ratio: 1 / 1;
+  border: 1px solid rgba(47, 51, 57, .18);
+  border-radius: 50%;
+  background: rgba(47, 51, 57, .1);
+  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, .58);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.admin-update-form .admin-media-preview img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.admin-update-form .admin-media-picker.has-image .admin-media-preview img {
+  display: block;
+}
+
+.admin-update-form .admin-media-placeholder {
+  position: relative;
+  width: 30px;
+  height: 24px;
+  border: 3px solid rgba(47, 51, 57, .38);
+  border-radius: 5px;
+}
+
+.admin-update-form .admin-media-placeholder::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 5px;
+  height: 5px;
+  border: 2px solid rgba(47, 51, 57, .38);
+  border-radius: 50%;
+}
+
+.admin-update-form .admin-media-placeholder::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  height: 10px;
+  background: linear-gradient(135deg, transparent 0 32%, rgba(47, 51, 57, .38) 33% 54%, transparent 55%),
+    linear-gradient(45deg, transparent 0 38%, rgba(47, 51, 57, .38) 39% 63%, transparent 64%);
+}
+
+.admin-update-form .admin-media-picker.has-image .admin-media-placeholder {
+  display: none;
+}
+
+.admin-update-form .admin-media-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 34px;
+}
+
+.admin-update-form .admin-media-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 13px;
+  border: 1px solid #ff4f8a;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .62);
+  color: #f02c72;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.admin-update-form .admin-media-clear {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #d84d73;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-update-form .admin-media-picker.has-pending .admin-media-clear:not([hidden]) {
+  display: inline-flex;
+}
+
+.admin-update-form .admin-media-clear[hidden] {
+  display: none;
+}
+
+.admin-update-form .admin-media-picker input[type="file"] {
+  display: none !important;
+}
+
+.admin-update-form .admin-media-picker small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.4;
+  color: rgba(47, 51, 57, .46);
+}
+
+.admin-update-form .admin-media-status {
+  min-height: 18px;
+  text-align: center;
+}
+
+html.dark-mode .admin-update-form .admin-media-settings,
+body.dark-mode .admin-update-form .admin-media-settings {
+  background: rgba(255, 255, 255, .075);
+  border-color: rgba(255, 255, 255, .14);
+}
+
+html.dark-mode .admin-update-form .admin-media-picker p,
+body.dark-mode .admin-update-form .admin-media-picker p {
+  color: rgba(255, 255, 255, .92);
+}
+
+html.dark-mode .admin-update-form .admin-media-preview,
+body.dark-mode .admin-update-form .admin-media-preview {
+  border-color: rgba(255, 255, 255, .24);
+  background: rgba(255, 255, 255, .12);
+  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, .06);
+}
+
+html.dark-mode .admin-update-form .admin-media-placeholder,
+html.dark-mode .admin-update-form .admin-media-placeholder::before,
+body.dark-mode .admin-update-form .admin-media-placeholder,
+body.dark-mode .admin-update-form .admin-media-placeholder::before {
+  border-color: rgba(255, 255, 255, .45);
+}
+
+html.dark-mode .admin-update-form .admin-media-placeholder::after,
+body.dark-mode .admin-update-form .admin-media-placeholder::after {
+  background: linear-gradient(135deg, transparent 0 32%, rgba(255, 255, 255, .45) 33% 54%, transparent 55%),
+    linear-gradient(45deg, transparent 0 38%, rgba(255, 255, 255, .45) 39% 63%, transparent 64%);
+}
+
+html.dark-mode .admin-update-form .admin-media-upload-btn,
+body.dark-mode .admin-update-form .admin-media-upload-btn {
+  background: rgba(255, 255, 255, .08);
+  color: #ffb7cc;
+  border-color: rgba(255, 183, 204, .78);
+}
+
+html.dark-mode .admin-update-form .admin-media-clear,
+body.dark-mode .admin-update-form .admin-media-clear {
+  color: #ffb7cc;
+}
+
+html.dark-mode .admin-update-form .admin-media-picker small,
+body.dark-mode .admin-update-form .admin-media-picker small {
+  color: rgba(255, 255, 255, .48);
+}

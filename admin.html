@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin - Sổ lưu bút</title>
-  <link rel="icon" href="assets/ueb-logo-transparent.png" type="image/png" />
+  <link rel="icon" href="assets/ueb-logo-transparent.webp" type="image/webp" />
   <link rel="preload" as="image" href="assets/bg-silk.webp" type="image/webp" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
 <body class="admin-body" data-page="admin">
   <audio id="bgMusic" loop preload="none"><source src="assets/music.mp3" type="audio/mpeg"></audio>
   <header class="topbar toolbar-solid toolbar-title-visible admin-topbar">
-    <a href="index.html" class="home-cap" aria-label="Quay lại thiệp mời"><img src="assets/ueb-logo-transparent.png" alt="UEB" class="home-logo"></a>
+    <a href="index.html" class="home-cap" aria-label="Quay lại thiệp mời"><img src="assets/ueb-logo-transparent.webp" alt="UEB" class="home-logo"></a>
     <span class="toolbar-title">Phạm Như Quỳnh</span>
     <button class="theme-btn" id="themeBtn" type="button" aria-label="Chuyển chế độ sáng tối"><span class="theme-knob"></span></button>
     <button class="floating-music-btn" id="musicBtn" type="button" aria-label="Bật hoặc tắt nhạc">♫</button>
@@ -39,7 +39,7 @@
   <main class="admin-page">
     <section class="admin-login admin-login-v2" id="loginBox">
       <div class="admin-login-brand">
-        <img src="assets/ueb-logo-transparent.png" alt="UEB">
+        <img src="assets/ueb-logo-transparent.webp" alt="UEB">
       </div>
       <div class="admin-login-heading">
         <h1>Như Quỳnh</h1>
@@ -54,7 +54,7 @@
     </section>
     <section class="dashboard hidden" id="dashboardBox">
       <div class="admin-dashboard-cover">
-        <img src="assets/photoAdmin1.jpg" alt="Ảnh tốt nghiệp của Phạm Như Quỳnh">
+        <img alt="Ảnh tốt nghiệp của Phạm Như Quỳnh" data-invitation-media="admin_hero_image" data-fallback-src="assets/photoAdmin1.jpg">
       </div>
       <div class="admin-top">
         <div><h1 class="admin-dashboard-name">Như Quỳnh</h1></div>
@@ -145,6 +145,66 @@
           <label>Hội trường<input type="text" id="settingHall" placeholder="Hội trường MMH"></label>
           <label>Địa chỉ<textarea id="settingAddress" rows="3" placeholder="Số 57 Phạm Hùng, Nam Từ Liêm, Hà Nội"></textarea></label>
           <label>Câu quote<textarea id="settingQuote" rows="3" placeholder="Hi vọng trong bức tranh thanh xuân của tớ sẽ có sự góp mặt của cậu."></textarea></label>
+          <div class="admin-media-settings" aria-label="Cập nhật ảnh thiệp mời">
+            <div class="admin-media-head">
+              <h3>Ảnh thiệp mời</h3>
+            </div>
+            <div class="admin-media-grid">
+              <div class="admin-media-picker" data-media-card="hero_image">
+                <p>Ảnh chính</p>
+                <label class="admin-media-preview" for="mediaHeroImage">
+                  <img alt="" data-media-preview="hero_image">
+                  <span class="admin-media-placeholder" aria-hidden="true"></span>
+                </label>
+                <div class="admin-media-actions">
+                  <label class="admin-media-upload-btn" for="mediaHeroImage" data-media-action="hero_image">Tải lên</label>
+                  <button type="button" class="admin-media-clear" data-media-clear="hero_image">Xóa</button>
+                </div>
+                <input id="mediaHeroImage" type="file" accept="image/jpeg,image/png,image/webp" data-media-upload="hero_image">
+                <small>JPG, PNG, WebP</small>
+              </div>
+              <div class="admin-media-picker" data-media-card="guestbook_image">
+                <p>Ảnh sổ lưu bút</p>
+                <label class="admin-media-preview" for="mediaGuestbookImage">
+                  <img alt="" data-media-preview="guestbook_image">
+                  <span class="admin-media-placeholder" aria-hidden="true"></span>
+                </label>
+                <div class="admin-media-actions">
+                  <label class="admin-media-upload-btn" for="mediaGuestbookImage" data-media-action="guestbook_image">Tải lên</label>
+                  <button type="button" class="admin-media-clear" data-media-clear="guestbook_image">Xóa</button>
+                </div>
+                <input id="mediaGuestbookImage" type="file" accept="image/jpeg,image/png,image/webp" data-media-upload="guestbook_image">
+                <small>JPG, PNG, WebP</small>
+              </div>
+              <div class="admin-media-picker" data-media-card="thank_image">
+                <p>Ảnh thank you</p>
+                <label class="admin-media-preview" for="mediaThankImage">
+                  <img alt="" data-media-preview="thank_image">
+                  <span class="admin-media-placeholder" aria-hidden="true"></span>
+                </label>
+                <div class="admin-media-actions">
+                  <label class="admin-media-upload-btn" for="mediaThankImage" data-media-action="thank_image">Tải lên</label>
+                  <button type="button" class="admin-media-clear" data-media-clear="thank_image">Xóa</button>
+                </div>
+                <input id="mediaThankImage" type="file" accept="image/jpeg,image/png,image/webp" data-media-upload="thank_image">
+                <small>JPG, PNG, WebP</small>
+              </div>
+              <div class="admin-media-picker" data-media-card="admin_hero_image">
+                <p>Ảnh trang admin</p>
+                <label class="admin-media-preview" for="mediaAdminHeroImage">
+                  <img alt="" data-media-preview="admin_hero_image">
+                  <span class="admin-media-placeholder" aria-hidden="true"></span>
+                </label>
+                <div class="admin-media-actions">
+                  <label class="admin-media-upload-btn" for="mediaAdminHeroImage" data-media-action="admin_hero_image">Tải lên</label>
+                  <button type="button" class="admin-media-clear" data-media-clear="admin_hero_image">Xóa</button>
+                </div>
+                <input id="mediaAdminHeroImage" type="file" accept="image/jpeg,image/png,image/webp" data-media-upload="admin_hero_image">
+                <small>JPG, PNG, WebP</small>
+              </div>
+            </div>
+            <p class="admin-media-status" id="mediaUploadStatus" aria-live="polite"></p>
+          </div>
           <div class="admin-gift-unlock-settings hidden" id="giftUnlockSettings">
             <div class="admin-update-grid two">
               <label>Ngày mở quà<input type="date" id="giftUnlockDateInput"></label>

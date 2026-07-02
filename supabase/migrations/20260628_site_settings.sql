@@ -248,5 +248,17 @@ values
     false,
     false,
     true
+  ),
+  (
+    'invitation_media',
+    '{
+      "hero_image": "",
+      "guestbook_image": "",
+      "thank_image": "",
+      "admin_hero_image": ""
+    }'::jsonb,
+    true,
+    true,
+    true
   )
 on conflict (key) do nothing;
