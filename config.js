@@ -7,3 +7,4 @@ window.INVITATION_CONFIG = {
     formThanks: "Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến buổi lễ tốt nghiệp của mình."
   }
 };
+

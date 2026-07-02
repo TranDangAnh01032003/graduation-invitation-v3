@@ -10095,3 +10095,37 @@ html.dark-mode .admin-update-form .admin-media-picker small,
 body.dark-mode .admin-update-form .admin-media-picker small {
   color: rgba(255, 255, 255, .48);
 }
+
+/* Dynamic Supabase media: avoid flashing old bundled photos */
+img[data-invitation-media] {
+  opacity: 0;
+  transition: opacity .22s ease;
+}
+
+img[data-invitation-media].media-loaded {
+  opacity: 1;
+}
+
+.hero-section,
+.guestbook-hero,
+.thank-section,
+.admin-dashboard-cover {
+  background-color: rgba(245, 244, 241, .58);
+}
+
+html.dark-mode .hero-section,
+html.dark-mode .guestbook-hero,
+html.dark-mode .thank-section,
+html.dark-mode .admin-dashboard-cover,
+body.dark-mode .hero-section,
+body.dark-mode .guestbook-hero,
+body.dark-mode .thank-section,
+body.dark-mode .admin-dashboard-cover {
+  background-color: rgba(255, 255, 255, .05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  img[data-invitation-media] {
+    transition: none;
+  }
+}
